@@ -39,8 +39,8 @@
 						}
 					},
 					"world": {
-						"x": 1472,
-						"y": 448,
+						"x": 1088,
+						"y": 576,
 						"width": 127,
 						"height": 127,
 						"originX": 0.5,
@@ -488,45 +488,6 @@
 					}
 				},
 				{
-					"type": "Block",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 15,
-					"instanceVariables": {
-						"history": "x",
-						"LastMove": ""
-					},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": false,
-								"tags": "block"
-							}
-						}
-					},
-					"world": {
-						"x": 960,
-						"y": 576,
-						"width": 127,
-						"height": 127,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
 					"type": "Text",
 					"properties": {
 						"text": "Test",
@@ -580,7 +541,7 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 18,
+					"uid": 19,
 					"instanceVariables": {
 						"history": "x",
 						"LastMove": ""
@@ -595,6 +556,45 @@
 					},
 					"world": {
 						"x": 832,
+						"y": 576,
+						"width": 127,
+						"height": 127,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Block",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 15,
+					"instanceVariables": {
+						"history": "x",
+						"LastMove": ""
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": false,
+								"tags": "block"
+							}
+						}
+					},
+					"world": {
+						"x": 960,
 						"y": 576,
 						"width": 127,
 						"height": 127,

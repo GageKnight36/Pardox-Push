@@ -56,12 +56,13 @@
 					"actions": [
 						{
 							"callFunction": "canMove",
-							"sid": 481222829083876,
+							"sid": 990893911409703,
 							"parameters": [
 								"\"L\"",
 								"180",
 								"-10",
-								"0"
+								"0",
+								"Block.UID"
 							]
 						}
 					],
@@ -87,12 +88,13 @@
 					"actions": [
 						{
 							"callFunction": "canMove",
-							"sid": 795644438439819,
+							"sid": 479980100421162,
 							"parameters": [
 								"\"R\"",
 								"0",
 								"10",
-								"0"
+								"0",
+								"Block.UID"
 							]
 						}
 					],
@@ -118,12 +120,13 @@
 					"actions": [
 						{
 							"callFunction": "canMove",
-							"sid": 223307268024959,
+							"sid": 867551716084500,
 							"parameters": [
 								"\"U\"",
 								"270",
 								"0",
-								"-10"
+								"-10",
+								"Block.UID"
 							]
 						}
 					],
@@ -149,12 +152,13 @@
 					"actions": [
 						{
 							"callFunction": "canMove",
-							"sid": 463801517102134,
+							"sid": 835804207340859,
 							"parameters": [
 								"\"D\"",
 								"90",
 								"0",
-								"10"
+								"10",
+								"Block.UID"
 							]
 						}
 					],
@@ -448,6 +452,13 @@
 					"initialValue": "0",
 					"comment": "",
 					"sid": 904193109311589
+				},
+				{
+					"name": "blockID",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 593180043229458
 				}
 			],
 			"eventType": "function-block",
@@ -457,6 +468,7 @@
 					"id": "set-boolean-eventvar",
 					"objectClass": "System",
 					"sid": 515441049206012,
+					"disabled": true,
 					"parameters": {
 						"variable": "Continue",
 						"value": "true"
@@ -469,34 +481,166 @@
 					"eventType": "block",
 					"conditions": [
 						{
-							"id": "compare-boolean-eventvar",
+							"id": "pick-by-comparison",
 							"objectClass": "System",
-							"sid": 969291266926406,
+							"sid": 619637899459958,
 							"parameters": {
-								"variable": "Continue"
+								"object": "Block",
+								"expression": "blockID",
+								"comparison": 0,
+								"value": "Block.UID"
 							}
 						}
 					],
 					"actions": [],
-					"sid": 347599184756114,
+					"sid": 527610303560486,
 					"children": [
 						{
 							"eventType": "block",
 							"conditions": [
 								{
 									"id": "is-overlapping-at-offset",
-									"objectClass": "Player",
-									"sid": 171488282512270,
+									"objectClass": "Block",
+									"sid": 475229155591633,
+									"parameters": {
+										"object": "Wall",
+										"offset-x": "xOffSet",
+										"offset-y": "yOffSet"
+									}
+								},
+								{
+									"id": "is-overlapping-at-offset",
+									"objectClass": "Block",
+									"sid": 194242389619825,
+									"disabled": true,
 									"parameters": {
 										"object": "Block",
 										"offset-x": "xOffSet",
 										"offset-y": "yOffSet"
-									},
-									"isInverted": true
+									}
 								}
 							],
 							"actions": [],
-							"sid": 260680957632953
+							"sid": 737828077563842,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 663909020601295,
+											"parameters": {
+												"variable": "xOffSet",
+												"comparison": 4,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-grid-position",
+											"objectClass": "Player",
+											"sid": 147599161167020,
+											"behaviorType": "TileMovement",
+											"parameters": {
+												"x": "Player.TileMovement.GridTargetX-1",
+												"y": "Player.TileMovement.GridTargetY",
+												"instant": "animate"
+											}
+										}
+									],
+									"sid": 150291854036819
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 610826823290745,
+											"parameters": {
+												"first-value": "yOffSet",
+												"comparison": 4,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-grid-position",
+											"objectClass": "Player",
+											"sid": 116679569809307,
+											"behaviorType": "TileMovement",
+											"parameters": {
+												"x": "Player.TileMovement.GridTargetX",
+												"y": "Player.TileMovement.GridTargetY-1",
+												"instant": "animate"
+											}
+										}
+									],
+									"sid": 155525380000254
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-eventvar",
+											"objectClass": "System",
+											"sid": 872826394215125,
+											"parameters": {
+												"variable": "xOffSet",
+												"comparison": 2,
+												"value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-grid-position",
+											"objectClass": "Player",
+											"sid": 896835893334665,
+											"behaviorType": "TileMovement",
+											"parameters": {
+												"x": "Player.TileMovement.GridTargetX+1",
+												"y": "Player.TileMovement.GridTargetY",
+												"instant": "animate"
+											}
+										}
+									],
+									"sid": 694011529964955
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "compare-two-values",
+											"objectClass": "System",
+											"sid": 167417322322761,
+											"parameters": {
+												"first-value": "yOffSet",
+												"comparison": 2,
+												"second-value": "0"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "set-grid-position",
+											"objectClass": "Player",
+											"sid": 529488199254155,
+											"behaviorType": "TileMovement",
+											"parameters": {
+												"x": "Player.TileMovement.GridTargetX",
+												"y": "Player.TileMovement.GridTargetY+1",
+												"instant": "animate"
+											}
+										}
+									],
+									"sid": 479154383728977
+								}
+							],
+							"isOrBlock": true
 						},
 						{
 							"eventType": "block",
@@ -504,245 +648,72 @@
 								{
 									"id": "else",
 									"objectClass": "System",
-									"sid": 696522109189918
+									"sid": 637665317108136
 								}
 							],
-							"actions": [],
-							"sid": 506449655608227,
+							"actions": [
+								{
+									"id": "move-at-angle",
+									"objectClass": "Block",
+									"sid": 205378559142234,
+									"parameters": {
+										"angle": "PlayerAngle",
+										"distance": "128"
+									}
+								},
+								{
+									"id": "add-to-instvar",
+									"objectClass": "Block",
+									"sid": 285801526820362,
+									"parameters": {
+										"instance-variable": "history",
+										"value": "direction"
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "Text",
+									"sid": 752647420984203,
+									"parameters": {
+										"text": "Block.history"
+									}
+								},
+								{
+									"id": "set-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 252662265623145,
+									"parameters": {
+										"variable": "Continue",
+										"value": "false"
+									}
+								}
+							],
+							"sid": 663736681446461,
 							"children": [
 								{
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "is-overlapping-at-offset",
+											"id": "is-overlapping-another-object",
 											"objectClass": "Block",
-											"sid": 515491266677350,
+											"sid": 172220967976981,
 											"parameters": {
-												"object": "Wall",
-												"offset-x": "xOffSet",
-												"offset-y": "yOffSet"
+												"object": "Blocks"
 											}
-										},
-										{
-											"id": "is-overlapping-at-offset",
-											"objectClass": "Block",
-											"sid": 570301658980780,
-											"disabled": true,
-											"parameters": {
-												"object": "Block",
-												"offset-x": "xOffSet",
-												"offset-y": "yOffSet"
-											}
-										}
-									],
-									"actions": [
-										{
-											"id": "set-text",
-											"objectClass": "Text",
-											"sid": 735636930753659,
-											"parameters": {
-												"text": "xOffSet& \"HI\" & yOffSet"
-											}
-										},
-										{
-											"id": "set-boolean-eventvar",
-											"objectClass": "System",
-											"sid": 547894148387455,
-											"parameters": {
-												"variable": "Continue",
-												"value": "false"
-											}
-										}
-									],
-									"sid": 463710705232942,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 418595431916808,
-													"parameters": {
-														"variable": "xOffSet",
-														"comparison": 4,
-														"value": "0"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-grid-position",
-													"objectClass": "Player",
-													"sid": 273004902843607,
-													"behaviorType": "TileMovement",
-													"parameters": {
-														"x": "Player.TileMovement.GridTargetX-1",
-														"y": "Player.TileMovement.GridTargetY",
-														"instant": "animate"
-													}
-												}
-											],
-											"sid": 125330195338303
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 854693415953845,
-													"parameters": {
-														"first-value": "yOffSet",
-														"comparison": 4,
-														"second-value": "0"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-grid-position",
-													"objectClass": "Player",
-													"sid": 391118886238854,
-													"behaviorType": "TileMovement",
-													"parameters": {
-														"x": "Player.TileMovement.GridTargetX",
-														"y": "Player.TileMovement.GridTargetY-1",
-														"instant": "animate"
-													}
-												}
-											],
-											"sid": 451751149721115
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-eventvar",
-													"objectClass": "System",
-													"sid": 444024761841498,
-													"parameters": {
-														"variable": "xOffSet",
-														"comparison": 2,
-														"value": "0"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-grid-position",
-													"objectClass": "Player",
-													"sid": 223151043867905,
-													"behaviorType": "TileMovement",
-													"parameters": {
-														"x": "Player.TileMovement.GridTargetX+1",
-														"y": "Player.TileMovement.GridTargetY",
-														"instant": "animate"
-													}
-												}
-											],
-											"sid": 357096563182609
-										},
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "compare-two-values",
-													"objectClass": "System",
-													"sid": 718226197564951,
-													"parameters": {
-														"first-value": "yOffSet",
-														"comparison": 2,
-														"second-value": "0"
-													}
-												}
-											],
-											"actions": [
-												{
-													"id": "set-grid-position",
-													"objectClass": "Player",
-													"sid": 591923901735365,
-													"behaviorType": "TileMovement",
-													"parameters": {
-														"x": "Player.TileMovement.GridTargetX",
-														"y": "Player.TileMovement.GridTargetY+1",
-														"instant": "animate"
-													}
-												}
-											],
-											"sid": 445665836899841
-										}
-									],
-									"isOrBlock": true
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "else",
-											"objectClass": "System",
-											"sid": 767714803979668
 										}
 									],
 									"actions": [
 										{
 											"id": "move-at-angle",
-											"objectClass": "Block",
-											"sid": 973188144223228,
+											"objectClass": "Blocks",
+											"sid": 416995632546986,
 											"parameters": {
 												"angle": "PlayerAngle",
 												"distance": "128"
 											}
-										},
-										{
-											"id": "add-to-instvar",
-											"objectClass": "Block",
-											"sid": 310999951199679,
-											"parameters": {
-												"instance-variable": "history",
-												"value": "direction"
-											}
-										},
-										{
-											"id": "set-text",
-											"objectClass": "Text",
-											"sid": 242149573695887,
-											"parameters": {
-												"text": "Block.history"
-											}
 										}
 									],
-									"sid": 304035681816858
-								},
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "is-overlapping-at-offset",
-											"objectClass": "Block",
-											"sid": 860771312440579,
-											"parameters": {
-												"object": "Wall",
-												"offset-x": "xOffSet",
-												"offset-y": "yOffSet"
-											},
-											"isInverted": true
-										},
-										{
-											"id": "is-overlapping-at-offset",
-											"objectClass": "Block",
-											"sid": 440794726651836,
-											"parameters": {
-												"object": "Block",
-												"offset-x": "xOffSet",
-												"offset-y": "yOffSet"
-											},
-											"isInverted": true
-										}
-									],
-									"actions": [],
-									"sid": 527306173770017,
-									"disabled": true
+									"sid": 136463422000459
 								}
 							]
 						},
@@ -752,7 +723,7 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 356039926031678,
+									"sid": 801005402409005,
 									"parameters": {
 										"variable": "xOffSet",
 										"comparison": 4,
@@ -764,14 +735,14 @@
 								{
 									"id": "add-to-eventvar",
 									"objectClass": "System",
-									"sid": 593332680451771,
+									"sid": 112344311911340,
 									"parameters": {
 										"variable": "xOffSet",
 										"value": "128"
 									}
 								}
 							],
-							"sid": 670651953739146
+							"sid": 252099577769613
 						},
 						{
 							"eventType": "block",
@@ -779,7 +750,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 155396909510310,
+									"sid": 238873535082633,
 									"parameters": {
 										"first-value": "yOffSet",
 										"comparison": 4,
@@ -791,14 +762,14 @@
 								{
 									"id": "add-to-eventvar",
 									"objectClass": "System",
-									"sid": 330733574597043,
+									"sid": 458891405560955,
 									"parameters": {
 										"variable": "yOffSet",
 										"value": "128"
 									}
 								}
 							],
-							"sid": 164924020697234
+							"sid": 400677645061315
 						},
 						{
 							"eventType": "block",
@@ -806,7 +777,7 @@
 								{
 									"id": "compare-eventvar",
 									"objectClass": "System",
-									"sid": 803798984081547,
+									"sid": 767570725786545,
 									"parameters": {
 										"variable": "xOffSet",
 										"comparison": 2,
@@ -818,14 +789,14 @@
 								{
 									"id": "add-to-eventvar",
 									"objectClass": "System",
-									"sid": 131309164439074,
+									"sid": 470742415562762,
 									"parameters": {
 										"variable": "xOffSet",
 										"value": "-128"
 									}
 								}
 							],
-							"sid": 570842855992175
+							"sid": 866763438816927
 						},
 						{
 							"eventType": "block",
@@ -833,7 +804,7 @@
 								{
 									"id": "compare-two-values",
 									"objectClass": "System",
-									"sid": 274958085340730,
+									"sid": 768295112333123,
 									"parameters": {
 										"first-value": "yOffSet",
 										"comparison": 2,
@@ -845,14 +816,29 @@
 								{
 									"id": "add-to-eventvar",
 									"objectClass": "System",
-									"sid": 234976815554627,
+									"sid": 726007513188769,
 									"parameters": {
 										"variable": "yOffSet",
 										"value": "-128"
 									}
 								}
 							],
-							"sid": 195986373804526
+							"sid": 304808307675930
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "compare-boolean-eventvar",
+									"objectClass": "System",
+									"sid": 363359426039906,
+									"parameters": {
+										"variable": "Continue"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 243785113726900
 						}
 					]
 				}
