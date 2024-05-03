@@ -1,5 +1,5 @@
 {
-	"name": "Layout 1",
+	"name": "Level 1",
 	"layers": [
 		{
 			"name": "Layer 0",
@@ -510,8 +510,8 @@
 						}
 					},
 					"world": {
-						"x": 1344,
-						"y": 448,
+						"x": 960,
+						"y": 576,
 						"width": 127,
 						"height": 127,
 						"originX": 0.5,
@@ -650,5 +650,5 @@
 	"vpX": 0.5,
 	"vpY": 0.5,
 	"projection": "perspective",
-	"eventSheet": "Event sheet 1"
+	"eventSheet": "Level 1 Event Sheet"
 }
