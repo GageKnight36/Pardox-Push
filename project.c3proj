@@ -56,7 +56,9 @@
 	"autosaveData": null,
 	"containers": [],
 	"families": {
-		"items": [],
+		"items": [
+			"Blocks"
+		],
 		"subfolders": []
 	},
 	"layouts": {
