@@ -1,0 +1,742 @@
+{
+	"name": "Event sheet 1",
+	"events": [
+		{
+			"eventType": "variable",
+			"name": "Continue",
+			"type": "boolean",
+			"initialValue": "true",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 615193383762242
+		},
+		{
+			"eventType": "variable",
+			"name": "BlocksMovement",
+			"type": "string",
+			"initialValue": "x",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 294459618683763
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-collision-with-another-object",
+					"objectClass": "Player",
+					"sid": 869714623469734,
+					"parameters": {
+						"object": "Block"
+					}
+				}
+			],
+			"actions": [],
+			"sid": 221675476716933,
+			"children": [
+				{
+					"eventType": "comment",
+					"text": "Player moving left"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "Player",
+							"sid": 249396785538806,
+							"parameters": {
+								"comparison": 4,
+								"x-co-ordinate": "Block.X"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 685223169394361,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-at-offset",
+									"objectClass": "Block",
+									"sid": 931104308340295,
+									"parameters": {
+										"object": "Wall",
+										"offset-x": "-10",
+										"offset-y": "0"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "move-at-angle",
+									"objectClass": "Block",
+									"sid": 698345784782604,
+									"parameters": {
+										"angle": "180",
+										"distance": "128"
+									}
+								},
+								{
+									"id": "add-to-instvar",
+									"objectClass": "Block",
+									"sid": 761876063578500,
+									"parameters": {
+										"instance-variable": "history",
+										"value": "\"w\""
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "Text",
+									"sid": 813487045622242,
+									"parameters": {
+										"text": "Block.history"
+									}
+								}
+							],
+							"sid": 882795924585204
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 578560308322986
+								},
+								{
+									"id": "is-overlapping-at-offset",
+									"objectClass": "Player",
+									"sid": 374586486215217,
+									"parameters": {
+										"object": "Block",
+										"offset-x": "-10",
+										"offset-y": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-grid-position",
+									"objectClass": "Player",
+									"sid": 780789728991502,
+									"behaviorType": "TileMovement",
+									"parameters": {
+										"x": "Player.TileMovement.GridTargetX+1",
+										"y": "Player.TileMovement.GridTargetY",
+										"instant": "animate"
+									}
+								}
+							],
+							"sid": 192113506572443
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Player moving right"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-x",
+							"objectClass": "Player",
+							"sid": 940718410243150,
+							"parameters": {
+								"comparison": 2,
+								"x-co-ordinate": "Block.X"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 880577454692369,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-at-offset",
+									"objectClass": "Block",
+									"sid": 765091137064860,
+									"parameters": {
+										"object": "Wall",
+										"offset-x": "10",
+										"offset-y": "0"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "move-at-angle",
+									"objectClass": "Block",
+									"sid": 310315834060883,
+									"parameters": {
+										"angle": "0",
+										"distance": "128"
+									}
+								},
+								{
+									"id": "add-to-instvar",
+									"objectClass": "Block",
+									"sid": 274663146773822,
+									"parameters": {
+										"instance-variable": "history",
+										"value": "\"e\""
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "Text",
+									"sid": 873844874106279,
+									"parameters": {
+										"text": "Block.history"
+									}
+								}
+							],
+							"sid": 799152463960729
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 209694722721041
+								},
+								{
+									"id": "is-overlapping-at-offset",
+									"objectClass": "Player",
+									"sid": 474567293823532,
+									"parameters": {
+										"object": "Block",
+										"offset-x": "10",
+										"offset-y": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-grid-position",
+									"objectClass": "Player",
+									"sid": 674611257251709,
+									"behaviorType": "TileMovement",
+									"parameters": {
+										"x": "Player.TileMovement.GridTargetX-1",
+										"y": "Player.TileMovement.GridTargetY",
+										"instant": "animate"
+									}
+								}
+							],
+							"sid": 992344557950757
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Player moving up"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "Player",
+							"sid": 309298365029546,
+							"parameters": {
+								"comparison": 4,
+								"y-co-ordinate": "Block.Y"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 358999217104601,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-at-offset",
+									"objectClass": "Block",
+									"sid": 337440648555857,
+									"parameters": {
+										"object": "Wall",
+										"offset-x": "0",
+										"offset-y": "-10"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "move-at-angle",
+									"objectClass": "Block",
+									"sid": 530549578192336,
+									"parameters": {
+										"angle": "270",
+										"distance": "128"
+									}
+								},
+								{
+									"id": "add-to-instvar",
+									"objectClass": "Block",
+									"sid": 482471389674011,
+									"parameters": {
+										"instance-variable": "history",
+										"value": "\"n\""
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "Text",
+									"sid": 188423733712733,
+									"parameters": {
+										"text": "Block.history"
+									}
+								}
+							],
+							"sid": 638870244007724
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 621041813610952
+								},
+								{
+									"id": "is-overlapping-at-offset",
+									"objectClass": "Player",
+									"sid": 563035537391120,
+									"parameters": {
+										"object": "Block",
+										"offset-x": "0",
+										"offset-y": "-10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-grid-position",
+									"objectClass": "Player",
+									"sid": 921201082152551,
+									"behaviorType": "TileMovement",
+									"parameters": {
+										"x": "Player.TileMovement.GridTargetX",
+										"y": "Player.TileMovement.GridTargetY+1",
+										"instant": "animate"
+									}
+								}
+							],
+							"sid": 226758769433018
+						}
+					]
+				},
+				{
+					"eventType": "comment",
+					"text": "Player moving down"
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-y",
+							"objectClass": "Player",
+							"sid": 608118467851771,
+							"parameters": {
+								"comparison": 2,
+								"y-co-ordinate": "Block.Y"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 276094515073711,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-at-offset",
+									"objectClass": "Block",
+									"sid": 334398443840910,
+									"parameters": {
+										"object": "Wall",
+										"offset-x": "0",
+										"offset-y": "10"
+									},
+									"isInverted": true
+								}
+							],
+							"actions": [
+								{
+									"id": "move-at-angle",
+									"objectClass": "Block",
+									"sid": 947791468687722,
+									"parameters": {
+										"angle": "90",
+										"distance": "128"
+									}
+								},
+								{
+									"id": "add-to-instvar",
+									"objectClass": "Block",
+									"sid": 199973646708068,
+									"parameters": {
+										"instance-variable": "history",
+										"value": "\"s\""
+									}
+								},
+								{
+									"id": "set-text",
+									"objectClass": "Text",
+									"sid": 224635147457170,
+									"parameters": {
+										"text": "Block.history"
+									}
+								}
+							],
+							"sid": 323650275431485
+						},
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "else",
+									"objectClass": "System",
+									"sid": 769150096649887
+								},
+								{
+									"id": "is-overlapping-at-offset",
+									"objectClass": "Player",
+									"sid": 320625382497465,
+									"parameters": {
+										"object": "Block",
+										"offset-x": "0",
+										"offset-y": "10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-grid-position",
+									"objectClass": "Player",
+									"sid": 513483101421009,
+									"behaviorType": "TileMovement",
+									"parameters": {
+										"x": "Player.TileMovement.GridTargetX",
+										"y": "Player.TileMovement.GridTargetY-1",
+										"instant": "animate"
+									}
+								}
+							],
+							"sid": 709761586165768
+						}
+					]
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 147729300571152,
+					"parameters": {
+						"key": 90
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-instvar-value",
+					"objectClass": "Block",
+					"sid": 904821779042555,
+					"parameters": {
+						"instance-variable": "LastMove",
+						"value": "mid(Block.history, len(Block.history)-1,1)"
+					}
+				}
+			],
+			"sid": 831099589346395,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Block",
+							"sid": 836365614370322,
+							"parameters": {
+								"instance-variable": "LastMove",
+								"comparison": 0,
+								"value": "\"n\""
+							}
+						},
+						{
+							"id": "is-overlapping-at-offset",
+							"objectClass": "Block",
+							"sid": 293513525599406,
+							"parameters": {
+								"object": "Player",
+								"offset-x": "0",
+								"offset-y": "10"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "move-at-angle",
+							"objectClass": "Block",
+							"sid": 608476514562210,
+							"parameters": {
+								"angle": "90",
+								"distance": "128"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Block",
+							"sid": 840934043725467,
+							"parameters": {
+								"instance-variable": "history",
+								"value": "mid(Block.history, 0,len(Block.history)-1)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text",
+							"sid": 654738049151882,
+							"parameters": {
+								"text": "Block.history"
+							}
+						}
+					],
+					"sid": 958077405305403
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Block",
+							"sid": 744301601870026,
+							"parameters": {
+								"instance-variable": "LastMove",
+								"comparison": 0,
+								"value": "\"e\""
+							}
+						},
+						{
+							"id": "is-overlapping-at-offset",
+							"objectClass": "Block",
+							"sid": 951311850346334,
+							"parameters": {
+								"object": "Player",
+								"offset-x": "-10",
+								"offset-y": "0"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "move-at-angle",
+							"objectClass": "Block",
+							"sid": 903502329276806,
+							"parameters": {
+								"angle": "180",
+								"distance": "128"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Block",
+							"sid": 836714093262192,
+							"parameters": {
+								"instance-variable": "history",
+								"value": "mid(Block.history, 0,len(Block.history)-1)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text",
+							"sid": 129015216892472,
+							"parameters": {
+								"text": "Block.history"
+							}
+						}
+					],
+					"sid": 853085994283741
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Block",
+							"sid": 945006315134028,
+							"parameters": {
+								"instance-variable": "LastMove",
+								"comparison": 0,
+								"value": "\"s\""
+							}
+						},
+						{
+							"id": "is-overlapping-at-offset",
+							"objectClass": "Block",
+							"sid": 153113560432366,
+							"parameters": {
+								"object": "Player",
+								"offset-x": "0",
+								"offset-y": "-10"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "move-at-angle",
+							"objectClass": "Block",
+							"sid": 253842238364637,
+							"parameters": {
+								"angle": "270",
+								"distance": "128"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Block",
+							"sid": 906667197773710,
+							"parameters": {
+								"instance-variable": "history",
+								"value": "mid(Block.history, 0,len(Block.history)-1)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text",
+							"sid": 620064703380531,
+							"parameters": {
+								"text": "Block.history"
+							}
+						}
+					],
+					"sid": 267163834031102
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Block",
+							"sid": 292611322719435,
+							"parameters": {
+								"instance-variable": "LastMove",
+								"comparison": 0,
+								"value": "\"w\""
+							}
+						},
+						{
+							"id": "is-overlapping-at-offset",
+							"objectClass": "Block",
+							"sid": 614255710873233,
+							"parameters": {
+								"object": "Player",
+								"offset-x": "10",
+								"offset-y": "0"
+							},
+							"isInverted": true
+						}
+					],
+					"actions": [
+						{
+							"id": "move-at-angle",
+							"objectClass": "Block",
+							"sid": 769327225520614,
+							"parameters": {
+								"angle": "0",
+								"distance": "128"
+							}
+						},
+						{
+							"id": "set-instvar-value",
+							"objectClass": "Block",
+							"sid": 234393220090514,
+							"parameters": {
+								"instance-variable": "history",
+								"value": "mid(Block.history, 0,len(Block.history)-1)"
+							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text",
+							"sid": 405202898168822,
+							"parameters": {
+								"text": "Block.history"
+							}
+						}
+					],
+					"sid": 722338369426240
+				},
+				{
+					"eventType": "block",
+					"conditions": [],
+					"actions": [],
+					"sid": 494115886033245
+				}
+			]
+		},
+		{
+			"eventType": "comment",
+			"text": "for checking for multiple blocks use a while loop and check at iterations of 128 pixels go into you found wall or blank."
+		},
+		{
+			"functionName": "CanMove",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "string",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "direction",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 614389839750812
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 645638935911400,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 279089559899633,
+							"parameters": {
+								"variable": "Continue"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 754057828146749
+				}
+			]
+		}
+	],
+	"sid": 438014735872012
+}
