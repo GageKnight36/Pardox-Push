@@ -49,7 +49,9 @@
 			"Wall",
 			"Block",
 			"Keyboard",
-			"Text"
+			"Text",
+			"Player2",
+			"Player3"
 		],
 		"subfolders": []
 	},
