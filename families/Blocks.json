@@ -2,7 +2,15 @@
 	"name": "Blocks",
 	"plugin-id": "Sprite",
 	"sid": 864051725062768,
-	"instanceVariables": [],
+	"instanceVariables": [
+		{
+			"name": "HistoryFamily",
+			"type": "string",
+			"desc": "",
+			"show": true,
+			"sid": 434520836263063
+		}
+	],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
