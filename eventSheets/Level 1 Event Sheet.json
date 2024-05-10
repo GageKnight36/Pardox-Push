@@ -66,11 +66,11 @@
 					"actions": [
 						{
 							"callFunction": "canMove",
-							"sid": 135796709841879,
+							"sid": 571472197480493,
 							"parameters": [
 								"\"L\"",
 								"180",
-								"-10",
+								"-120",
 								"0",
 								"Block.UID"
 							]
@@ -98,11 +98,11 @@
 					"actions": [
 						{
 							"callFunction": "canMove",
-							"sid": 479980100421162,
+							"sid": 980180526628437,
 							"parameters": [
 								"\"R\"",
 								"0",
-								"10",
+								"120",
 								"0",
 								"Block.UID"
 							]
@@ -130,12 +130,12 @@
 					"actions": [
 						{
 							"callFunction": "canMove",
-							"sid": 867551716084500,
+							"sid": 954671116353576,
 							"parameters": [
 								"\"U\"",
 								"270",
 								"0",
-								"-10",
+								"-120",
 								"Block.UID"
 							]
 						}
@@ -162,12 +162,12 @@
 					"actions": [
 						{
 							"callFunction": "canMove",
-							"sid": 835804207340859,
+							"sid": 736299350438963,
 							"parameters": [
 								"\"D\"",
 								"90",
 								"0",
-								"10",
+								"120",
 								"Block.UID"
 							]
 						}
@@ -525,7 +525,8 @@
 								{
 									"id": "set-position",
 									"objectClass": "Player2",
-									"sid": 898416548651567,
+									"sid": 956008979328996,
+									"disabled": true,
 									"parameters": {
 										"x": "Player.X + xOffSet",
 										"y": "Player.Y + yOffSet"
@@ -534,10 +535,11 @@
 								{
 									"id": "set-position",
 									"objectClass": "Player3",
-									"sid": 925417410247423,
+									"sid": 404440553527335,
+									"disabled": true,
 									"parameters": {
-										"x": "Player.X + xOffSet-10",
-										"y": "Player.Y + yOffSet"
+										"x": "Player.X",
+										"y": "Player.Y"
 									}
 								}
 							],
@@ -667,16 +669,6 @@
 														"variable": "xOffSet",
 														"value": "128"
 													}
-												},
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 918453348985397,
-													"disabled": true,
-													"parameters": {
-														"variable": "xOffSet",
-														"value": "xOffSet-10"
-													}
 												}
 											],
 											"sid": 974084856201747
@@ -703,16 +695,6 @@
 													"parameters": {
 														"variable": "yOffSet",
 														"value": "128"
-													}
-												},
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 270966679340109,
-													"disabled": true,
-													"parameters": {
-														"variable": "yOffSet",
-														"value": "yOffSet-10"
 													}
 												}
 											],
@@ -741,15 +723,6 @@
 														"variable": "xOffSet",
 														"value": "-128"
 													}
-												},
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 442365456371550,
-													"parameters": {
-														"variable": "xOffSet",
-														"value": "xOffSet+10"
-													}
 												}
 											],
 											"sid": 764001767155006
@@ -776,16 +749,6 @@
 													"parameters": {
 														"variable": "yOffSet",
 														"value": "-128"
-													}
-												},
-												{
-													"id": "set-eventvar-value",
-													"objectClass": "System",
-													"sid": 989879970576542,
-													"disabled": true,
-													"parameters": {
-														"variable": "yOffSet",
-														"value": "yOffSet+10"
 													}
 												}
 											],

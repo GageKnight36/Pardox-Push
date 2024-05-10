@@ -665,8 +665,8 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 1088,
-						"y": 576,
+						"x": 1216,
+						"y": 704,
 						"width": 127,
 						"height": 127,
 						"originX": 0.5,
@@ -694,10 +694,10 @@
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 1088,
+						"x": 1344,
 						"y": 576,
-						"width": 128,
-						"height": 128,
+						"width": 127,
+						"height": 127,
 						"originX": 0.5,
 						"originY": 0.5,
 						"color": [
