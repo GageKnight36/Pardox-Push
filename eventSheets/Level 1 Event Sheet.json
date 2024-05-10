@@ -32,6 +32,16 @@
 			"sid": 294459618683763
 		},
 		{
+			"eventType": "variable",
+			"name": "lastBlock",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 593494348402709
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -213,17 +223,6 @@
 								"comparison": 0,
 								"value": "\"U\""
 							}
-						},
-						{
-							"id": "is-overlapping-at-offset",
-							"objectClass": "Block",
-							"sid": 293513525599406,
-							"parameters": {
-								"object": "Player",
-								"offset-x": "0",
-								"offset-y": "10"
-							},
-							"isInverted": true
 						}
 					],
 					"actions": [
@@ -254,7 +253,35 @@
 							}
 						}
 					],
-					"sid": 958077405305403
+					"sid": 958077405305403,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-at-offset",
+									"objectClass": "Block",
+									"sid": 768911294759549,
+									"parameters": {
+										"object": "Player",
+										"offset-x": "0",
+										"offset-y": "10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-y",
+									"objectClass": "Player",
+									"sid": 260603151353226,
+									"parameters": {
+										"y": "Player.Y+128"
+									}
+								}
+							],
+							"sid": 910207181322710
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -921,11 +948,20 @@
 								},
 								{
 									"id": "add-to-instvar",
-									"objectClass": "Blocks",
-									"sid": 567628378708616,
+									"objectClass": "Block",
+									"sid": 434478086888112,
 									"parameters": {
 										"instance-variable": "HistoryFamily",
 										"value": "direction"
+									}
+								},
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 370494273194935,
+									"parameters": {
+										"variable": "lastBlock",
+										"value": "Block.UID"
 									}
 								}
 							],
@@ -935,35 +971,89 @@
 									"eventType": "block",
 									"conditions": [
 										{
-											"id": "is-overlapping-another-object",
-											"objectClass": "Block",
-											"sid": 214407479704159,
+											"id": "for-each",
+											"objectClass": "System",
+											"sid": 492984997515162,
 											"parameters": {
 												"object": "Blocks"
 											}
 										}
 									],
-									"actions": [
+									"actions": [],
+									"sid": 610281299555067,
+									"children": [
 										{
-											"id": "move-at-angle",
-											"objectClass": "Blocks",
-											"sid": 147413409223722,
-											"parameters": {
-												"angle": "PlayerAngle",
-												"distance": "128"
-											}
-										},
-										{
-											"id": "add-to-instvar",
-											"objectClass": "Blocks",
-											"sid": 800511098173439,
-											"parameters": {
-												"instance-variable": "HistoryFamily",
-												"value": "direction"
-											}
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "pick-by-evaluate",
+													"objectClass": "System",
+													"sid": 939984027676941,
+													"parameters": {
+														"object": "Block",
+														"expression": "lastBlock"
+													}
+												}
+											],
+											"actions": [],
+											"sid": 456113342250479,
+											"children": [
+												{
+													"eventType": "block",
+													"conditions": [
+														{
+															"id": "is-overlapping-another-object",
+															"objectClass": "Block",
+															"sid": 348611652855282,
+															"parameters": {
+																"object": "Blocks"
+															}
+														}
+													],
+													"actions": [
+														{
+															"id": "move-at-angle",
+															"objectClass": "Blocks",
+															"sid": 849018737435465,
+															"parameters": {
+																"angle": "PlayerAngle",
+																"distance": "128"
+															}
+														},
+														{
+															"id": "add-to-instvar",
+															"objectClass": "Blocks",
+															"sid": 250028125868124,
+															"parameters": {
+																"instance-variable": "HistoryFamily",
+																"value": "direction"
+															}
+														},
+														{
+															"callFunction": "checkNextBlock",
+															"sid": 822319313791795,
+															"disabled": true,
+															"parameters": [
+																"Blocks.UID",
+																"PlayerAngle",
+																"direction"
+															]
+														},
+														{
+															"id": "set-eventvar-value",
+															"objectClass": "System",
+															"sid": 570928388023488,
+															"parameters": {
+																"variable": "lastBlock",
+																"value": "Blocks.UID"
+															}
+														}
+													],
+													"sid": 278290535166120
+												}
+											]
 										}
-									],
-									"sid": 732376026465626
+									]
 								}
 							]
 						}
@@ -988,6 +1078,77 @@
 				}
 			],
 			"sid": 238345555034538
+		},
+		{
+			"functionName": "checkNextBlock",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [
+				{
+					"name": "uid",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 657067370309672
+				},
+				{
+					"name": "playerAngle",
+					"type": "number",
+					"initialValue": "0",
+					"comment": "",
+					"sid": 891997938924460
+				},
+				{
+					"name": "direction",
+					"type": "string",
+					"initialValue": "",
+					"comment": "",
+					"sid": 644415436253156
+				}
+			],
+			"eventType": "function-block",
+			"conditions": [],
+			"actions": [],
+			"sid": 451596035158637,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "pick-by-unique-id",
+							"objectClass": "Block",
+							"sid": 684547935214852,
+							"parameters": {
+								"unique-id": "uid"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "move-at-angle",
+							"objectClass": "Block",
+							"sid": 728168927232586,
+							"parameters": {
+								"angle": "PlayerAngle",
+								"distance": "128"
+							}
+						},
+						{
+							"id": "add-to-instvar",
+							"objectClass": "Block",
+							"sid": 300751901632773,
+							"parameters": {
+								"instance-variable": "HistoryFamily",
+								"value": "direction"
+							}
+						}
+					],
+					"sid": 113928853070633
+				}
+			]
 		}
 	],
 	"sid": 438014735872012
