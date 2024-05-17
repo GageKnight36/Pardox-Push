@@ -39,8 +39,8 @@
 						}
 					},
 					"world": {
-						"x": 1088,
-						"y": 576,
+						"x": 1216,
+						"y": 704,
 						"width": 127,
 						"height": 127,
 						"originX": 0.5,
@@ -184,7 +184,7 @@
 					},
 					"world": {
 						"x": 768,
-						"y": 832,
+						"y": 704,
 						"width": 512,
 						"height": 128,
 						"originX": 0.5,
@@ -543,8 +543,8 @@
 					},
 					"uid": 19,
 					"instanceVariables": {
-						"HistoryFamily": "x",
-						"history": "x",
+						"HistoryFamily": "",
+						"history": "",
 						"LastMove": ""
 					},
 					"behaviors": {
@@ -556,8 +556,8 @@
 						}
 					},
 					"world": {
-						"x": 960,
-						"y": 576,
+						"x": 1472,
+						"y": 448,
 						"width": 127,
 						"height": 127,
 						"originX": 0.5,
@@ -583,8 +583,8 @@
 					},
 					"uid": 15,
 					"instanceVariables": {
-						"HistoryFamily": "x",
-						"history": "x",
+						"HistoryFamily": "",
+						"history": "",
 						"LastMove": ""
 					},
 					"behaviors": {
@@ -596,48 +596,8 @@
 						}
 					},
 					"world": {
-						"x": 832,
-						"y": 576,
-						"width": 127,
-						"height": 127,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "Block",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 18,
-					"instanceVariables": {
-						"HistoryFamily": "x",
-						"history": "x",
-						"LastMove": ""
-					},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": false,
-								"tags": "block"
-							}
-						}
-					},
-					"world": {
-						"x": 704,
-						"y": 704,
+						"x": 1344,
+						"y": 448,
 						"width": 127,
 						"height": 127,
 						"originX": 0.5,
@@ -696,6 +656,46 @@
 					"world": {
 						"x": 1088,
 						"y": 1280,
+						"width": 127,
+						"height": 127,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "Block",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Animation 1",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 23,
+					"instanceVariables": {
+						"HistoryFamily": "",
+						"history": "",
+						"LastMove": ""
+					},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": false,
+								"tags": "block"
+							}
+						}
+					},
+					"world": {
+						"x": 1216,
+						"y": 448,
 						"width": 127,
 						"height": 127,
 						"originX": 0.5,

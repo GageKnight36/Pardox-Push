@@ -222,7 +222,7 @@
 				{
 					"id": "set-instvar-value",
 					"objectClass": "Block",
-					"sid": 521876399563312,
+					"sid": 820694773183429,
 					"parameters": {
 						"instance-variable": "LastMove",
 						"value": "mid(Blocks.HistoryFamily, len(Blocks.HistoryFamily)-1,1)"
@@ -257,11 +257,11 @@
 						},
 						{
 							"id": "set-instvar-value",
-							"objectClass": "Blocks",
-							"sid": 104732166035728,
+							"objectClass": "Block",
+							"sid": 695407319235689,
 							"parameters": {
 								"instance-variable": "HistoryFamily",
-								"value": "mid(Blocks.HistoryFamily, 0,len(Blocks.HistoryFamily)-1)"
+								"value": "left(Block.HistoryFamily, len(Block.HistoryFamily)-1)"
 							}
 						},
 						{
@@ -281,11 +281,11 @@
 								{
 									"id": "is-overlapping-at-offset",
 									"objectClass": "Block",
-									"sid": 768911294759549,
+									"sid": 499433505621322,
 									"parameters": {
 										"object": "Player",
 										"offset-x": "0",
-										"offset-y": "10"
+										"offset-y": "1"
 									}
 								}
 							],
@@ -330,6 +330,15 @@
 					],
 					"actions": [
 						{
+							"id": "set-instvar-value",
+							"objectClass": "Block",
+							"sid": 959599160851805,
+							"parameters": {
+								"instance-variable": "LastMove",
+								"value": "mid(Blocks.HistoryFamily, len(Blocks.HistoryFamily)-1,1)"
+							}
+						},
+						{
 							"id": "move-at-angle",
 							"objectClass": "Block",
 							"sid": 903502329276806,
@@ -340,11 +349,11 @@
 						},
 						{
 							"id": "set-instvar-value",
-							"objectClass": "Blocks",
-							"sid": 890617080254605,
+							"objectClass": "Block",
+							"sid": 289317656579127,
 							"parameters": {
 								"instance-variable": "HistoryFamily",
-								"value": "mid(Blocks.HistoryFamily, 0,len(Blocks.HistoryFamily)-1)"
+								"value": "left(Block.HistoryFamily, len(Block.HistoryFamily)-1)"
 							}
 						},
 						{
@@ -364,10 +373,10 @@
 								{
 									"id": "is-overlapping-at-offset",
 									"objectClass": "Block",
-									"sid": 503252672119001,
+									"sid": 204322986412535,
 									"parameters": {
 										"object": "Player",
-										"offset-x": "-10",
+										"offset-x": "-1",
 										"offset-y": "0"
 									}
 								}
@@ -413,6 +422,15 @@
 					],
 					"actions": [
 						{
+							"id": "set-instvar-value",
+							"objectClass": "Block",
+							"sid": 308923719168077,
+							"parameters": {
+								"instance-variable": "LastMove",
+								"value": "mid(Blocks.HistoryFamily, len(Blocks.HistoryFamily)-1,1)"
+							}
+						},
+						{
 							"id": "move-at-angle",
 							"objectClass": "Block",
 							"sid": 253842238364637,
@@ -423,11 +441,11 @@
 						},
 						{
 							"id": "set-instvar-value",
-							"objectClass": "Blocks",
-							"sid": 935869189349588,
+							"objectClass": "Block",
+							"sid": 889864994824808,
 							"parameters": {
 								"instance-variable": "HistoryFamily",
-								"value": "mid(Blocks.HistoryFamily, 0,len(Blocks.HistoryFamily)-1)"
+								"value": "left(Block.HistoryFamily, len(Block.HistoryFamily)-1)"
 							}
 						},
 						{
@@ -447,11 +465,11 @@
 								{
 									"id": "is-overlapping-at-offset",
 									"objectClass": "Block",
-									"sid": 784457445091959,
+									"sid": 249638893237216,
 									"parameters": {
 										"object": "Player",
 										"offset-x": "0",
-										"offset-y": "-10"
+										"offset-y": "-1"
 									}
 								}
 							],
@@ -496,6 +514,15 @@
 					],
 					"actions": [
 						{
+							"id": "set-instvar-value",
+							"objectClass": "Block",
+							"sid": 208268384122584,
+							"parameters": {
+								"instance-variable": "LastMove",
+								"value": "mid(Blocks.HistoryFamily, len(Blocks.HistoryFamily)-1,1)"
+							}
+						},
+						{
 							"id": "move-at-angle",
 							"objectClass": "Block",
 							"sid": 769327225520614,
@@ -506,11 +533,11 @@
 						},
 						{
 							"id": "set-instvar-value",
-							"objectClass": "Blocks",
-							"sid": 514156843040925,
+							"objectClass": "Block",
+							"sid": 240172844445632,
 							"parameters": {
 								"instance-variable": "HistoryFamily",
-								"value": "mid(Blocks.HistoryFamily, 0,len(Blocks.HistoryFamily)-1)"
+								"value": "left(Block.HistoryFamily, len(Block.HistoryFamily)-1)"
 							}
 						},
 						{
@@ -530,10 +557,10 @@
 								{
 									"id": "is-overlapping-at-offset",
 									"objectClass": "Block",
-									"sid": 411680898082484,
+									"sid": 376568121831283,
 									"parameters": {
 										"object": "Player",
-										"offset-x": "10",
+										"offset-x": "1",
 										"offset-y": "0"
 									}
 								}
@@ -668,6 +695,7 @@
 									"id": "set-position",
 									"objectClass": "Player2",
 									"sid": 956008979328996,
+									"disabled": true,
 									"parameters": {
 										"x": "Player.X + xOffSet",
 										"y": "Player.Y + yOffSet"
@@ -677,6 +705,7 @@
 									"id": "set-position",
 									"objectClass": "Player3",
 									"sid": 404440553527335,
+									"disabled": true,
 									"parameters": {
 										"x": "Player.X",
 										"y": "Player.Y"
