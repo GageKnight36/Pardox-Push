@@ -33,6 +33,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "CountLoop",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 951872909528449
+		},
+		{
+			"eventType": "variable",
 			"name": "lastBlock",
 			"type": "number",
 			"initialValue": "0",
@@ -40,6 +50,16 @@
 			"isStatic": false,
 			"isConstant": false,
 			"sid": 593494348402709
+		},
+		{
+			"eventType": "variable",
+			"name": "movingBlocks",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 182360118540432
 		},
 		{
 			"eventType": "block",
@@ -273,9 +293,20 @@
 								{
 									"id": "set-y",
 									"objectClass": "Player",
-									"sid": 260603151353226,
+									"sid": 340808137917824,
 									"parameters": {
 										"y": "Player.Y+128"
+									}
+								},
+								{
+									"id": "set-grid-position",
+									"objectClass": "Player",
+									"sid": 855074337258618,
+									"behaviorType": "TileMovement",
+									"parameters": {
+										"x": "Player.TileMovement.GridTargetX",
+										"y": "Player.TileMovement.GridTargetY+1",
+										"instant": "animate"
 									}
 								}
 							],
@@ -295,17 +326,6 @@
 								"comparison": 0,
 								"value": "\"R\""
 							}
-						},
-						{
-							"id": "is-overlapping-at-offset",
-							"objectClass": "Block",
-							"sid": 951311850346334,
-							"parameters": {
-								"object": "Player",
-								"offset-x": "-10",
-								"offset-y": "0"
-							},
-							"isInverted": true
 						}
 					],
 					"actions": [
@@ -336,7 +356,46 @@
 							}
 						}
 					],
-					"sid": 853085994283741
+					"sid": 853085994283741,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-at-offset",
+									"objectClass": "Block",
+									"sid": 503252672119001,
+									"parameters": {
+										"object": "Player",
+										"offset-x": "-10",
+										"offset-y": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-x",
+									"objectClass": "Player",
+									"sid": 425453004257700,
+									"parameters": {
+										"x": "Player.X-128"
+									}
+								},
+								{
+									"id": "set-grid-position",
+									"objectClass": "Player",
+									"sid": 941411330856372,
+									"behaviorType": "TileMovement",
+									"parameters": {
+										"x": "Player.TileMovement.GridTargetX-1",
+										"y": "Player.TileMovement.GridTargetY",
+										"instant": "animate"
+									}
+								}
+							],
+							"sid": 444109169289619
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -350,17 +409,6 @@
 								"comparison": 0,
 								"value": "\"D\""
 							}
-						},
-						{
-							"id": "is-overlapping-at-offset",
-							"objectClass": "Block",
-							"sid": 153113560432366,
-							"parameters": {
-								"object": "Player",
-								"offset-x": "0",
-								"offset-y": "-10"
-							},
-							"isInverted": true
 						}
 					],
 					"actions": [
@@ -391,7 +439,46 @@
 							}
 						}
 					],
-					"sid": 267163834031102
+					"sid": 267163834031102,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-at-offset",
+									"objectClass": "Block",
+									"sid": 784457445091959,
+									"parameters": {
+										"object": "Player",
+										"offset-x": "0",
+										"offset-y": "-10"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-y",
+									"objectClass": "Player",
+									"sid": 831203951780636,
+									"parameters": {
+										"y": "Player.Y-128"
+									}
+								},
+								{
+									"id": "set-grid-position",
+									"objectClass": "Player",
+									"sid": 752843829337393,
+									"behaviorType": "TileMovement",
+									"parameters": {
+										"x": "Player.TileMovement.GridTargetX",
+										"y": "Player.TileMovement.GridTargetY-1",
+										"instant": "animate"
+									}
+								}
+							],
+							"sid": 188926114707753
+						}
+					]
 				},
 				{
 					"eventType": "block",
@@ -405,17 +492,6 @@
 								"comparison": 0,
 								"value": "\"L\""
 							}
-						},
-						{
-							"id": "is-overlapping-at-offset",
-							"objectClass": "Block",
-							"sid": 614255710873233,
-							"parameters": {
-								"object": "Player",
-								"offset-x": "10",
-								"offset-y": "0"
-							},
-							"isInverted": true
 						}
 					],
 					"actions": [
@@ -446,7 +522,46 @@
 							}
 						}
 					],
-					"sid": 722338369426240
+					"sid": 722338369426240,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "is-overlapping-at-offset",
+									"objectClass": "Block",
+									"sid": 411680898082484,
+									"parameters": {
+										"object": "Player",
+										"offset-x": "10",
+										"offset-y": "0"
+									}
+								}
+							],
+							"actions": [
+								{
+									"id": "set-x",
+									"objectClass": "Player",
+									"sid": 691284113733110,
+									"parameters": {
+										"x": "Player.X+128"
+									}
+								},
+								{
+									"id": "set-grid-position",
+									"objectClass": "Player",
+									"sid": 221371375178582,
+									"behaviorType": "TileMovement",
+									"parameters": {
+										"x": "Player.TileMovement.GridTargetX+1",
+										"y": "Player.TileMovement.GridTargetY",
+										"instant": "animate"
+									}
+								}
+							],
+							"sid": 824744909178661
+						}
+					]
 				}
 			]
 		},
@@ -553,7 +668,6 @@
 									"id": "set-position",
 									"objectClass": "Player2",
 									"sid": 956008979328996,
-									"disabled": true,
 									"parameters": {
 										"x": "Player.X + xOffSet",
 										"y": "Player.Y + yOffSet"
@@ -563,7 +677,6 @@
 									"id": "set-position",
 									"objectClass": "Player3",
 									"sid": 404440553527335,
-									"disabled": true,
 									"parameters": {
 										"x": "Player.X",
 										"y": "Player.Y"
@@ -670,7 +783,17 @@
 											}
 										}
 									],
-									"actions": [],
+									"actions": [
+										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 255720836305032,
+											"parameters": {
+												"variable": "CountLoop",
+												"value": "1"
+											}
+										}
+									],
 									"sid": 680216957905500,
 									"children": [
 										{
@@ -798,7 +921,17 @@
 									"isInverted": true
 								}
 							],
-							"actions": [],
+							"actions": [
+								{
+									"id": "set-eventvar-value",
+									"objectClass": "System",
+									"sid": 574153570313668,
+									"parameters": {
+										"variable": "CountLoop",
+										"value": "0"
+									}
+								}
+							],
 							"sid": 241357295943588,
 							"children": [
 								{
@@ -930,132 +1063,16 @@
 							],
 							"actions": [
 								{
-									"id": "move-at-angle",
-									"objectClass": "Block",
-									"sid": 219596273661537,
-									"parameters": {
-										"angle": "PlayerAngle",
-										"distance": "128"
-									}
-								},
-								{
-									"id": "set-text",
-									"objectClass": "Text",
-									"sid": 988508798417399,
-									"parameters": {
-										"text": "Blocks.HistoryFamily"
-									}
-								},
-								{
-									"id": "add-to-instvar",
-									"objectClass": "Block",
-									"sid": 434478086888112,
-									"parameters": {
-										"instance-variable": "HistoryFamily",
-										"value": "direction"
-									}
-								},
-								{
-									"id": "set-eventvar-value",
-									"objectClass": "System",
-									"sid": 370494273194935,
-									"parameters": {
-										"variable": "lastBlock",
-										"value": "Block.UID"
-									}
-								}
-							],
-							"sid": 433110398175431,
-							"children": [
-								{
-									"eventType": "block",
-									"conditions": [
-										{
-											"id": "for-each",
-											"objectClass": "System",
-											"sid": 492984997515162,
-											"parameters": {
-												"object": "Blocks"
-											}
-										}
-									],
-									"actions": [],
-									"sid": 610281299555067,
-									"children": [
-										{
-											"eventType": "block",
-											"conditions": [
-												{
-													"id": "pick-by-evaluate",
-													"objectClass": "System",
-													"sid": 939984027676941,
-													"parameters": {
-														"object": "Block",
-														"expression": "lastBlock"
-													}
-												}
-											],
-											"actions": [],
-											"sid": 456113342250479,
-											"children": [
-												{
-													"eventType": "block",
-													"conditions": [
-														{
-															"id": "is-overlapping-another-object",
-															"objectClass": "Block",
-															"sid": 348611652855282,
-															"parameters": {
-																"object": "Blocks"
-															}
-														}
-													],
-													"actions": [
-														{
-															"id": "move-at-angle",
-															"objectClass": "Blocks",
-															"sid": 849018737435465,
-															"parameters": {
-																"angle": "PlayerAngle",
-																"distance": "128"
-															}
-														},
-														{
-															"id": "add-to-instvar",
-															"objectClass": "Blocks",
-															"sid": 250028125868124,
-															"parameters": {
-																"instance-variable": "HistoryFamily",
-																"value": "direction"
-															}
-														},
-														{
-															"callFunction": "checkNextBlock",
-															"sid": 822319313791795,
-															"disabled": true,
-															"parameters": [
-																"Blocks.UID",
-																"PlayerAngle",
-																"direction"
-															]
-														},
-														{
-															"id": "set-eventvar-value",
-															"objectClass": "System",
-															"sid": 570928388023488,
-															"parameters": {
-																"variable": "lastBlock",
-																"value": "Blocks.UID"
-															}
-														}
-													],
-													"sid": 278290535166120
-												}
-											]
-										}
+									"callFunction": "checkNextBlock",
+									"sid": 119003291747782,
+									"parameters": [
+										"blockID",
+										"PlayerAngle",
+										"direction"
 									]
 								}
-							]
+							],
+							"sid": 433110398175431
 						}
 					]
 				}
@@ -1144,9 +1161,142 @@
 								"instance-variable": "HistoryFamily",
 								"value": "direction"
 							}
+						},
+						{
+							"id": "set-text",
+							"objectClass": "Text",
+							"sid": 992706320628875,
+							"parameters": {
+								"text": "Blocks.HistoryFamily"
+							}
+						},
+						{
+							"id": "set-eventvar-value",
+							"objectClass": "System",
+							"sid": 333989955726415,
+							"parameters": {
+								"variable": "lastBlock",
+								"value": "Block.UID"
+							}
+						},
+						{
+							"id": "set-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 534480416094300,
+							"parameters": {
+								"variable": "movingBlocks",
+								"value": "true"
+							}
 						}
 					],
 					"sid": 113928853070633
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "while",
+							"objectClass": "System",
+							"sid": 611853795005553
+						},
+						{
+							"id": "compare-boolean-eventvar",
+							"objectClass": "System",
+							"sid": 483113681840774,
+							"parameters": {
+								"variable": "movingBlocks"
+							}
+						}
+					],
+					"actions": [],
+					"sid": 184501237172735,
+					"children": [
+						{
+							"eventType": "block",
+							"conditions": [
+								{
+									"id": "pick-by-comparison",
+									"objectClass": "System",
+									"sid": 247784565315972,
+									"parameters": {
+										"object": "Block",
+										"expression": "Block.UID",
+										"comparison": 0,
+										"value": "lastBlock"
+									}
+								}
+							],
+							"actions": [],
+							"sid": 429100485910683,
+							"children": [
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-another-object",
+											"objectClass": "Block",
+											"sid": 931132970796287,
+											"parameters": {
+												"object": "Blocks"
+											}
+										}
+									],
+									"actions": [
+										{
+											"id": "move-at-angle",
+											"objectClass": "Blocks",
+											"sid": 834667759573543,
+											"parameters": {
+												"angle": "PlayerAngle",
+												"distance": "128"
+											}
+										},
+										{
+											"id": "add-to-instvar",
+											"objectClass": "Blocks",
+											"sid": 314463245593396,
+											"parameters": {
+												"instance-variable": "HistoryFamily",
+												"value": "direction"
+											}
+										},
+										{
+											"id": "set-eventvar-value",
+											"objectClass": "System",
+											"sid": 719172720450305,
+											"parameters": {
+												"variable": "lastBlock",
+												"value": "Blocks.UID"
+											}
+										}
+									],
+									"sid": 530725223942665
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "else",
+											"objectClass": "System",
+											"sid": 199472666511460
+										}
+									],
+									"actions": [
+										{
+											"id": "set-boolean-eventvar",
+											"objectClass": "System",
+											"sid": 954935054226212,
+											"parameters": {
+												"variable": "movingBlocks",
+												"value": "false"
+											}
+										}
+									],
+									"sid": 783237706953077
+								}
+							]
+						}
+					]
 				}
 			]
 		}
