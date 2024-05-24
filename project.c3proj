@@ -52,7 +52,14 @@
 			"Text",
 			"Player2",
 			"Player3",
-			"Sprite"
+			"Sprite",
+			"Text2",
+			"LoadingBackGround",
+			"Sprite3",
+			"BlueDoor",
+			"BlueButton",
+			"OrangeButton",
+			"OrangeDoor"
 		],
 		"subfolders": []
 	},
@@ -60,21 +67,25 @@
 	"containers": [],
 	"families": {
 		"items": [
-			"Blocks"
+			"Blocks",
+			"Doors"
 		],
 		"subfolders": []
 	},
 	"layouts": {
 		"items": [
+			"Loader Layout",
 			"Level 1",
 			"Level 2",
-			"Level 3"
+			"Level 3",
+			"Level 4"
 		],
 		"subfolders": []
 	},
 	"eventSheets": {
 		"items": [
-			"Level Event Sheet"
+			"Level Event Sheet",
+			"Loader Event"
 		],
 		"subfolders": []
 	},
@@ -190,7 +201,7 @@
 		"pixelRounding": false,
 		"zAxisScale": "normalized",
 		"fov": 0.7853981633974483,
-		"useLoaderLayout": false,
+		"useLoaderLayout": true,
 		"fullscreenMode": "letterbox-scale",
 		"fullscreenQuality": "high",
 		"viewportFit": "auto",
@@ -226,7 +237,7 @@
 		"zNear": 1,
 		"zFar": 10000,
 		"maxSpriteSheetSize": 2048,
-		"loaderStyle": "splash",
+		"loaderStyle": "none",
 		"preloadSounds": true,
 		"cordovaiOSScheme": "app",
 		"cordovaAndroidScheme": "https",
@@ -235,6 +246,6 @@
 		"uidAllocationMode": "increment"
 	},
 	"viewportWidth": 1920,
-	"viewportHeight": 1088,
-	"firstLayout": null
+	"viewportHeight": 1152,
+	"firstLayout": "Loader Layout"
 }

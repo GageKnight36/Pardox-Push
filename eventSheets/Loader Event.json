@@ -1,0 +1,56 @@
+{
+	"name": "Loader Event",
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 740114082627161
+				}
+			],
+			"actions": [
+				{
+					"id": "set-width",
+					"objectClass": "Sprite3",
+					"sid": 568036087538171,
+					"parameters": {
+						"width": "round(loadingprogress)*400"
+					}
+				}
+			],
+			"sid": 833948716288046
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-loader-layout-complete",
+					"objectClass": "System",
+					"sid": 676640515556581
+				}
+			],
+			"actions": [
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 336964060850800,
+					"parameters": {
+						"seconds": "1.0"
+					}
+				},
+				{
+					"id": "go-to-layout",
+					"objectClass": "System",
+					"sid": 615506404950910,
+					"parameters": {
+						"layout": "Level 1"
+					}
+				}
+			],
+			"sid": 605864712700955
+		}
+	],
+	"sid": 550755646037505
+}

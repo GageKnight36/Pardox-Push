@@ -216,6 +216,13 @@
 					"parameters": {
 						"key": 90
 					}
+				},
+				{
+					"id": "is-moving",
+					"objectClass": "Player",
+					"sid": 548777556504766,
+					"behaviorType": "TileMovement",
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -720,7 +727,7 @@
 										{
 											"id": "is-overlapping-at-offset",
 											"objectClass": "Player",
-											"sid": 175053731799869,
+											"sid": 877566542954698,
 											"parameters": {
 												"object": "Wall",
 												"offset-x": "xOffSet",
@@ -748,7 +755,8 @@
 											}
 										}
 									],
-									"sid": 305464980421789
+									"sid": 305464980421789,
+									"isOrBlock": true
 								},
 								{
 									"eventType": "block",
@@ -770,6 +778,18 @@
 											"sid": 822035922089177,
 											"parameters": {
 												"object": "Blocks",
+												"offset-x": "xOffSet",
+												"offset-y": "yOffSet"
+											},
+											"isInverted": true
+										},
+										{
+											"id": "is-overlapping-at-offset",
+											"objectClass": "Player",
+											"sid": 209941897833220,
+											"disabled": true,
+											"parameters": {
+												"object": "Doors",
 												"offset-x": "xOffSet",
 												"offset-y": "yOffSet"
 											},
@@ -797,6 +817,60 @@
 										}
 									],
 									"sid": 958809430077401
+								},
+								{
+									"eventType": "block",
+									"conditions": [
+										{
+											"id": "is-overlapping-at-offset",
+											"objectClass": "Player",
+											"sid": 245029023392738,
+											"parameters": {
+												"object": "Doors",
+												"offset-x": "xOffSet",
+												"offset-y": "yOffSet"
+											}
+										}
+									],
+									"actions": [],
+									"sid": 495218048236977,
+									"children": [
+										{
+											"eventType": "block",
+											"conditions": [
+												{
+													"id": "compare-opacity",
+													"objectClass": "Doors",
+													"sid": 545250371543207,
+													"parameters": {
+														"comparison": 0,
+														"opacity": "100"
+													}
+												}
+											],
+											"actions": [
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 717564962147371,
+													"parameters": {
+														"variable": "CanMove",
+														"value": "false"
+													}
+												},
+												{
+													"id": "set-boolean-eventvar",
+													"objectClass": "System",
+													"sid": 193349547917762,
+													"parameters": {
+														"variable": "Continue",
+														"value": "false"
+													}
+												}
+											],
+											"sid": 467066875956506
+										}
+									]
 								},
 								{
 									"eventType": "block",
@@ -1330,10 +1404,6 @@
 			]
 		},
 		{
-			"eventType": "comment",
-			"text": "check its working"
-		},
-		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -1356,6 +1426,132 @@
 				}
 			],
 			"sid": 560355599966486
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Blocks",
+					"sid": 379038559844953,
+					"parameters": {
+						"object": "BlueButton"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-opacity",
+					"objectClass": "BlueDoor",
+					"sid": 929163222122553,
+					"parameters": {
+						"opacity": "50"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "BlueDoor",
+					"sid": 374132124292312,
+					"behaviorType": "Solid",
+					"parameters": {
+						"state": "disabled"
+					}
+				}
+			],
+			"sid": 960781073696797
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 135749097537425
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "BlueDoor",
+					"sid": 669548329315658,
+					"behaviorType": "Solid",
+					"parameters": {
+						"state": "enabled"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "BlueDoor",
+					"sid": 889705969830024,
+					"parameters": {
+						"opacity": "100"
+					}
+				}
+			],
+			"sid": 985608402755342
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Blocks",
+					"sid": 900222024025290,
+					"parameters": {
+						"object": "OrangeButton"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-opacity",
+					"objectClass": "OrangeDoor",
+					"sid": 228195967711624,
+					"parameters": {
+						"opacity": "50"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "OrangeDoor",
+					"sid": 805055599159818,
+					"behaviorType": "Solid",
+					"parameters": {
+						"state": "disabled"
+					}
+				}
+			],
+			"sid": 410601865669244
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 619474843375541
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "OrangeDoor",
+					"sid": 971168014289314,
+					"behaviorType": "Solid",
+					"parameters": {
+						"state": "enabled"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "OrangeDoor",
+					"sid": 924981451119619,
+					"parameters": {
+						"opacity": "100"
+					}
+				}
+			],
+			"sid": 572407474023569
 		}
 	],
 	"sid": 438014735872012
