@@ -1,5 +1,5 @@
 {
-	"name": "Level 1 Event Sheet",
+	"name": "Level Event Sheet",
 	"events": [
 		{
 			"eventType": "variable",
@@ -1332,6 +1332,30 @@
 		{
 			"eventType": "comment",
 			"text": "check its working"
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Player",
+					"sid": 235712297262619,
+					"parameters": {
+						"object": "Sprite"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-nextprevious-layout",
+					"objectClass": "System",
+					"sid": 834923144102739,
+					"parameters": {
+						"which": "next"
+					}
+				}
+			],
+			"sid": 560355599966486
 		}
 	],
 	"sid": 438014735872012
