@@ -7,6 +7,7 @@
 	"effectTypes": [],
 	"members": [
 		"BlueDoor",
-		"OrangeDoor"
+		"OrangeDoor",
+		"PurpleDoor"
 	]
 }

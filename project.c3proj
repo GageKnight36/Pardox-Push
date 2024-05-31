@@ -8,6 +8,13 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "Button",
+			"name": "Button",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
@@ -59,7 +66,19 @@
 			"BlueDoor",
 			"BlueButton",
 			"OrangeButton",
-			"OrangeDoor"
+			"OrangeDoor",
+			"PurpleDoor",
+			"PurpleButton",
+			"Controls",
+			"BlockName",
+			"Text3",
+			"Sprite4",
+			"Sprite5",
+			"Sprite2",
+			"Sprite6",
+			"Moves",
+			"NextLevel",
+			"RetryLevel"
 		],
 		"subfolders": []
 	},
@@ -78,7 +97,9 @@
 			"Level 1",
 			"Level 2",
 			"Level 3",
-			"Level 4"
+			"Level 4",
+			"Level 5",
+			"Level 6"
 		],
 		"subfolders": []
 	},

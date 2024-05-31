@@ -43,6 +43,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "MoveCounter",
+			"type": "number",
+			"initialValue": "0",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 454107912910823
+		},
+		{
+			"eventType": "variable",
 			"name": "lastBlock",
 			"type": "number",
 			"initialValue": "0",
@@ -278,6 +288,15 @@
 							"parameters": {
 								"text": "Blocks.HistoryFamily"
 							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 598300580994609,
+							"parameters": {
+								"variable": "MoveCounter",
+								"value": "1"
+							}
 						}
 					],
 					"sid": 958077405305403,
@@ -369,6 +388,15 @@
 							"sid": 975058575529894,
 							"parameters": {
 								"text": "Blocks.HistoryFamily"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 349323372058501,
+							"parameters": {
+								"variable": "MoveCounter",
+								"value": "1"
 							}
 						}
 					],
@@ -462,6 +490,15 @@
 							"parameters": {
 								"text": "Blocks.HistoryFamily"
 							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 662559891307992,
+							"parameters": {
+								"variable": "MoveCounter",
+								"value": "1"
+							}
 						}
 					],
 					"sid": 267163834031102,
@@ -553,6 +590,15 @@
 							"sid": 573056021468301,
 							"parameters": {
 								"text": "Blocks.HistoryFamily"
+							}
+						},
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 812439575854794,
+							"parameters": {
+								"variable": "MoveCounter",
+								"value": "1"
 							}
 						}
 					],
@@ -1364,6 +1410,15 @@
 											}
 										},
 										{
+											"id": "add-to-eventvar",
+											"objectClass": "System",
+											"sid": 787463868313740,
+											"parameters": {
+												"variable": "MoveCounter",
+												"value": "1"
+											}
+										},
+										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
 											"sid": 719172720450305,
@@ -1441,6 +1496,15 @@
 			],
 			"actions": [
 				{
+					"id": "set-animation",
+					"objectClass": "BlueDoor",
+					"sid": 301684991465853,
+					"parameters": {
+						"animation": "\"Open\"",
+						"from": "beginning"
+					}
+				},
+				{
 					"id": "set-opacity",
 					"objectClass": "BlueDoor",
 					"sid": 929163222122553,
@@ -1471,6 +1535,15 @@
 			],
 			"actions": [
 				{
+					"id": "set-animation",
+					"objectClass": "BlueDoor",
+					"sid": 916392249595559,
+					"parameters": {
+						"animation": "\"Closed\"",
+						"from": "beginning"
+					}
+				},
+				{
 					"id": "set-enabled",
 					"objectClass": "BlueDoor",
 					"sid": 669548329315658,
@@ -1482,9 +1555,9 @@
 				{
 					"id": "set-opacity",
 					"objectClass": "BlueDoor",
-					"sid": 889705969830024,
+					"sid": 184720401567345,
 					"parameters": {
-						"opacity": "100"
+						"opacity": "85"
 					}
 				}
 			],
@@ -1503,6 +1576,15 @@
 				}
 			],
 			"actions": [
+				{
+					"id": "set-animation",
+					"objectClass": "OrangeDoor",
+					"sid": 489247366861976,
+					"parameters": {
+						"animation": "\"Open\"",
+						"from": "beginning"
+					}
+				},
 				{
 					"id": "set-opacity",
 					"objectClass": "OrangeDoor",
@@ -1534,6 +1616,15 @@
 			],
 			"actions": [
 				{
+					"id": "set-animation",
+					"objectClass": "OrangeDoor",
+					"sid": 784421223064767,
+					"parameters": {
+						"animation": "\"Closed\"",
+						"from": "beginning"
+					}
+				},
+				{
 					"id": "set-enabled",
 					"objectClass": "OrangeDoor",
 					"sid": 971168014289314,
@@ -1545,13 +1636,154 @@
 				{
 					"id": "set-opacity",
 					"objectClass": "OrangeDoor",
-					"sid": 924981451119619,
+					"sid": 253348570545524,
 					"parameters": {
-						"opacity": "100"
+						"opacity": "85"
 					}
 				}
 			],
 			"sid": 572407474023569
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "is-overlapping-another-object",
+					"objectClass": "Blocks",
+					"sid": 943793450017967,
+					"parameters": {
+						"object": "PurpleButton"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "set-opacity",
+					"objectClass": "PurpleDoor",
+					"sid": 270256519636927,
+					"parameters": {
+						"opacity": "50"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "PurpleDoor",
+					"sid": 914728537317131,
+					"behaviorType": "Solid",
+					"parameters": {
+						"state": "disabled"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "PurpleDoor",
+					"sid": 975500176561641,
+					"parameters": {
+						"animation": "\"Open\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 516991210066713
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "else",
+					"objectClass": "System",
+					"sid": 607808848282762
+				}
+			],
+			"actions": [
+				{
+					"id": "set-enabled",
+					"objectClass": "PurpleDoor",
+					"sid": 729882426499129,
+					"behaviorType": "Solid",
+					"parameters": {
+						"state": "enabled"
+					}
+				},
+				{
+					"id": "set-opacity",
+					"objectClass": "PurpleDoor",
+					"sid": 666808508824089,
+					"parameters": {
+						"opacity": "85"
+					}
+				},
+				{
+					"id": "set-animation",
+					"objectClass": "PurpleDoor",
+					"sid": 940419117337434,
+					"parameters": {
+						"animation": "\"Closed\"",
+						"from": "beginning"
+					}
+				}
+			],
+			"sid": 378824803722263
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-pressed",
+					"objectClass": "Keyboard",
+					"sid": 192335954915350,
+					"parameters": {
+						"key": 88
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 475152157715427
+				}
+			],
+			"sid": 128306982442712
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "NextLevel",
+					"sid": 431978816823293
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-nextprevious-layout",
+					"objectClass": "System",
+					"sid": 494238547831707,
+					"parameters": {
+						"which": "next"
+					}
+				}
+			],
+			"sid": 388418277048445
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-clicked",
+					"objectClass": "RetryLevel",
+					"sid": 221884187510882
+				}
+			],
+			"actions": [
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 549917261072594
+				}
+			],
+			"sid": 550051958742976
 		}
 	],
 	"sid": 438014735872012

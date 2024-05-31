@@ -1,31 +1,9 @@
 {
-	"name": "Sprite",
+	"name": "BlockName",
 	"plugin-id": "Sprite",
-	"sid": 244860064023055,
+	"sid": 119875676852809,
 	"isGlobal": false,
-	"instanceVariables": [
-		{
-			"name": "OneStar",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 649105164444685
-		},
-		{
-			"name": "TwoStars",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 875719058390915
-		},
-		{
-			"name": "ThreeStars",
-			"type": "number",
-			"desc": "",
-			"show": true,
-			"sid": 192783372436319
-		}
-	],
+	"instanceVariables": [],
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"animations": {
@@ -40,13 +18,13 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 9343943,
+						"imageSpriteId": 6095235,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 489776407760776,
+				"sid": 267967913000205,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

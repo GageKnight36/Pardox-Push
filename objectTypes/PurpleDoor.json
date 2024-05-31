@@ -1,14 +1,14 @@
 {
-	"name": "BlueDoor",
+	"name": "PurpleDoor",
 	"plugin-id": "Sprite",
-	"sid": 911369606828631,
+	"sid": 903206531031025,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [
 		{
 			"behaviorId": "solid",
 			"name": "Solid",
-			"sid": 343087575885069
+			"sid": 409706574858310
 		}
 	],
 	"effectTypes": [],
@@ -24,13 +24,13 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 1869856,
+						"imageSpriteId": 4775884,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 354152451949004,
+				"sid": 155170923281744,
 				"name": "Open",
 				"isLooping": false,
 				"isPingPong": false,
@@ -48,13 +48,13 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 548368,
+						"imageSpriteId": 1605984,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 243466405312416,
+				"sid": 553583604364437,
 				"name": "Closed",
 				"isLooping": false,
 				"isPingPong": false,
