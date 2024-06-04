@@ -1284,6 +1284,24 @@
 					"id": "stop-animation",
 					"objectClass": "Star3",
 					"sid": 936849771523125
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 250468738626003,
+					"parameters": {
+						"variable": "LevelComplete",
+						"value": "false"
+					}
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 590983878598244,
+					"parameters": {
+						"variable": "MoveCounter",
+						"value": "0"
+					}
 				}
 			],
 			"sid": 238345555034538
@@ -1825,6 +1843,24 @@
 					"id": "restart-layout",
 					"objectClass": "System",
 					"sid": 475152157715427
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 324959453817575,
+					"parameters": {
+						"variable": "MoveCounter",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 896272467547570,
+					"parameters": {
+						"variable": "LevelComplete",
+						"value": "false"
+					}
 				}
 			],
 			"sid": 128306982442712
@@ -2289,6 +2325,87 @@
 				}
 			],
 			"sid": 158626633036432
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 902400337708702,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked"
+					}
+				},
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 880136197174825,
+					"parameters": {
+						"object": "NextTXT"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-nextprevious-layout",
+					"objectClass": "System",
+					"sid": 810750003677468,
+					"parameters": {
+						"which": "next"
+					}
+				}
+			],
+			"sid": 647135639755545
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 350692087993233,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked"
+					}
+				},
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 843468757495285,
+					"parameters": {
+						"object": "RetryLevel"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "restart-layout",
+					"objectClass": "System",
+					"sid": 121203542615473
+				},
+				{
+					"id": "set-eventvar-value",
+					"objectClass": "System",
+					"sid": 959075221351181,
+					"parameters": {
+						"variable": "MoveCounter",
+						"value": "0"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 667193714368942,
+					"parameters": {
+						"variable": "LevelComplete",
+						"value": "false"
+					}
+				}
+			],
+			"sid": 266077810339214
 		}
 	],
 	"sid": 438014735872012
