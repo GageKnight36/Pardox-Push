@@ -8,13 +8,6 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
-			"id": "Button",
-			"name": "Button",
-			"author": "Scirra",
-			"bundled": false
-		},
-		{
-			"type": "plugin",
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
@@ -59,7 +52,7 @@
 			"Text",
 			"Player2",
 			"Player3",
-			"Sprite",
+			"Flag",
 			"Text2",
 			"LoadingBackGround",
 			"Sprite3",
@@ -75,9 +68,13 @@
 			"Sprite4",
 			"Sprite5",
 			"Sprite2",
-			"Sprite6",
+			"Star1",
 			"Moves",
-			"NextLevel",
+			"RetryLevelBTN",
+			"NextLevelBTN",
+			"NextTXT",
+			"Star2",
+			"Star3",
 			"RetryLevel"
 		],
 		"subfolders": []
@@ -87,7 +84,9 @@
 	"families": {
 		"items": [
 			"Blocks",
-			"Doors"
+			"Doors",
+			"LevelCompleteSprites",
+			"LevelCompleteText"
 		],
 		"subfolders": []
 	},

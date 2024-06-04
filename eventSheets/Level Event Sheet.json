@@ -63,6 +63,16 @@
 		},
 		{
 			"eventType": "variable",
+			"name": "LevelComplete",
+			"type": "boolean",
+			"initialValue": "false",
+			"comment": "",
+			"isStatic": false,
+			"isConstant": false,
+			"sid": 104319187089530
+		},
+		{
+			"eventType": "variable",
 			"name": "movingBlocks",
 			"type": "boolean",
 			"initialValue": "false",
@@ -232,6 +242,15 @@
 					"objectClass": "Player",
 					"sid": 548777556504766,
 					"behaviorType": "TileMovement",
+					"isInverted": true
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 364369593721308,
+					"parameters": {
+						"variable": "LevelComplete"
+					},
 					"isInverted": true
 				}
 			],
@@ -1079,6 +1098,15 @@
 										"variable": "CountLoop",
 										"value": "0"
 									}
+								},
+								{
+									"id": "add-to-eventvar",
+									"objectClass": "System",
+									"sid": 519834175478861,
+									"parameters": {
+										"variable": "MoveCounter",
+										"value": "-1"
+									}
 								}
 							],
 							"sid": 241357295943588,
@@ -1241,6 +1269,21 @@
 					"id": "stop-animation",
 					"objectClass": "Block",
 					"sid": 394087785368707
+				},
+				{
+					"id": "stop-animation",
+					"objectClass": "Star1",
+					"sid": 529243872975822
+				},
+				{
+					"id": "stop-animation",
+					"objectClass": "Star2",
+					"sid": 123478920439620
+				},
+				{
+					"id": "stop-animation",
+					"objectClass": "Star3",
+					"sid": 936849771523125
 				}
 			],
 			"sid": 238345555034538
@@ -1410,15 +1453,6 @@
 											}
 										},
 										{
-											"id": "add-to-eventvar",
-											"objectClass": "System",
-											"sid": 787463868313740,
-											"parameters": {
-												"variable": "MoveCounter",
-												"value": "1"
-											}
-										},
-										{
 											"id": "set-eventvar-value",
 											"objectClass": "System",
 											"sid": 719172720450305,
@@ -1466,8 +1500,17 @@
 					"objectClass": "Player",
 					"sid": 235712297262619,
 					"parameters": {
-						"object": "Sprite"
+						"object": "Flag"
 					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 477203337300680,
+					"parameters": {
+						"variable": "LevelComplete"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -1475,8 +1518,48 @@
 					"id": "go-to-nextprevious-layout",
 					"objectClass": "System",
 					"sid": 834923144102739,
+					"disabled": true,
 					"parameters": {
 						"which": "next"
+					}
+				},
+				{
+					"id": "move-at-angle",
+					"objectClass": "LevelCompleteSprites",
+					"sid": 660719257593250,
+					"parameters": {
+						"angle": "180",
+						"distance": "1920"
+					}
+				},
+				{
+					"id": "move-at-angle",
+					"objectClass": "LevelCompleteText",
+					"sid": 867647675910848,
+					"parameters": {
+						"angle": "180",
+						"distance": "1920"
+					}
+				},
+				{
+					"callFunction": "LevelComplete",
+					"sid": 287643869228156
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 671096499121549,
+					"parameters": {
+						"seconds": "0.5"
+					}
+				},
+				{
+					"id": "set-enabled",
+					"objectClass": "Player",
+					"sid": 264596636178137,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"state": "disabled"
 					}
 				}
 			],
@@ -1747,43 +1830,465 @@
 			"sid": 128306982442712
 		},
 		{
-			"eventType": "block",
-			"conditions": [
-				{
-					"id": "on-clicked",
-					"objectClass": "NextLevel",
-					"sid": 431978816823293
-				}
-			],
+			"functionName": "LevelComplete",
+			"functionDescription": "",
+			"functionCategory": "",
+			"functionReturnType": "none",
+			"functionCopyPicked": false,
+			"functionIsAsync": false,
+			"functionParameters": [],
+			"eventType": "function-block",
+			"conditions": [],
 			"actions": [
 				{
-					"id": "go-to-nextprevious-layout",
-					"objectClass": "System",
-					"sid": 494238547831707,
+					"id": "set-text",
+					"objectClass": "Moves",
+					"sid": 916143330094166,
 					"parameters": {
-						"which": "next"
+						"text": "\"Total Moves: \" & MoveCounter"
+					}
+				},
+				{
+					"id": "set-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 689474853260016,
+					"parameters": {
+						"variable": "LevelComplete",
+						"value": "true"
 					}
 				}
 			],
-			"sid": 388418277048445
+			"sid": 519124585587667,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 727498227269743,
+							"parameters": {
+								"first-value": "MoveCounter",
+								"comparison": 3,
+								"second-value": "Flag.OneStar"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Star1",
+							"sid": 637019278627630,
+							"parameters": {
+								"animation": "\"Star\"",
+								"from": "current-frame"
+							}
+						}
+					],
+					"sid": 977343969292158
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 978547497808530
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Star1",
+							"sid": 397226413225258,
+							"parameters": {
+								"animation": "\"No Star\"",
+								"from": "current-frame"
+							}
+						}
+					],
+					"sid": 691772737888917
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 892033948434331,
+							"parameters": {
+								"first-value": "MoveCounter",
+								"comparison": 3,
+								"second-value": "Flag.TwoStars"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Star2",
+							"sid": 373954932751367,
+							"parameters": {
+								"animation": "\"Star\"",
+								"from": "current-frame"
+							}
+						}
+					],
+					"sid": 554247461795263
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 907154476169662
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Star2",
+							"sid": 327824937772030,
+							"parameters": {
+								"animation": "\"No Star\"",
+								"from": "current-frame"
+							}
+						}
+					],
+					"sid": 181662715775087
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-two-values",
+							"objectClass": "System",
+							"sid": 704031999513701,
+							"parameters": {
+								"first-value": "MoveCounter",
+								"comparison": 3,
+								"second-value": "Flag.ThreeStars"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Star3",
+							"sid": 107333655239030,
+							"parameters": {
+								"animation": "\"Star\"",
+								"from": "current-frame"
+							}
+						}
+					],
+					"sid": 949367811194983
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 418932696569264
+						}
+					],
+					"actions": [
+						{
+							"id": "set-animation",
+							"objectClass": "Star3",
+							"sid": 572874912422522,
+							"parameters": {
+								"animation": "\"No Star\"",
+								"from": "current-frame"
+							}
+						}
+					],
+					"sid": 645511586496828
+				}
+			]
 		},
 		{
 			"eventType": "block",
 			"conditions": [
 				{
-					"id": "on-clicked",
-					"objectClass": "RetryLevel",
-					"sid": 221884187510882
+					"id": "on-key-released",
+					"objectClass": "Keyboard",
+					"sid": 376779366571093,
+					"parameters": {
+						"key": 38
+					}
+				},
+				{
+					"id": "is-moving",
+					"objectClass": "Player",
+					"sid": 288612719711574,
+					"behaviorType": "TileMovement",
+					"isInverted": true
 				}
 			],
 			"actions": [
 				{
-					"id": "restart-layout",
+					"id": "simulate-control",
+					"objectClass": "Player",
+					"sid": 484171921826526,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"control": "up"
+					}
+				},
+				{
+					"id": "wait",
 					"objectClass": "System",
-					"sid": 549917261072594
+					"sid": 804457034049191,
+					"parameters": {
+						"seconds": "0.1"
+					}
 				}
 			],
-			"sid": 550051958742976
+			"sid": 125414849309587,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-moving",
+							"objectClass": "Player",
+							"sid": 915290917704347,
+							"behaviorType": "TileMovement"
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 510374514194703,
+							"parameters": {
+								"variable": "MoveCounter",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 143545691415514
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-released",
+					"objectClass": "Keyboard",
+					"sid": 271652706150813,
+					"parameters": {
+						"key": 37
+					}
+				},
+				{
+					"id": "is-moving",
+					"objectClass": "Player",
+					"sid": 724372662201984,
+					"behaviorType": "TileMovement",
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Player",
+					"sid": 186371794640993,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"control": "left"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 199944945481024,
+					"parameters": {
+						"seconds": "0.1"
+					}
+				}
+			],
+			"sid": 718171659035361,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-moving",
+							"objectClass": "Player",
+							"sid": 962885479336486,
+							"behaviorType": "TileMovement"
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 341352289121408,
+							"parameters": {
+								"variable": "MoveCounter",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 807520117428905
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-released",
+					"objectClass": "Keyboard",
+					"sid": 386908679876280,
+					"parameters": {
+						"key": 40
+					}
+				},
+				{
+					"id": "is-moving",
+					"objectClass": "Player",
+					"sid": 474829773528544,
+					"behaviorType": "TileMovement",
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Player",
+					"sid": 235228302635515,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"control": "down"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 226943136320628,
+					"parameters": {
+						"seconds": "0.1"
+					}
+				}
+			],
+			"sid": 854491278743484,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-moving",
+							"objectClass": "Player",
+							"sid": 954885771355578,
+							"behaviorType": "TileMovement"
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 161047335922449,
+							"parameters": {
+								"variable": "MoveCounter",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 660562901328032
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-key-released",
+					"objectClass": "Keyboard",
+					"sid": 302425764867059,
+					"parameters": {
+						"key": 39
+					}
+				},
+				{
+					"id": "is-moving",
+					"objectClass": "Player",
+					"sid": 800538999995291,
+					"behaviorType": "TileMovement",
+					"isInverted": true
+				}
+			],
+			"actions": [
+				{
+					"id": "simulate-control",
+					"objectClass": "Player",
+					"sid": 941836352350112,
+					"behaviorType": "TileMovement",
+					"parameters": {
+						"control": "right"
+					}
+				},
+				{
+					"id": "wait",
+					"objectClass": "System",
+					"sid": 458996849061966,
+					"parameters": {
+						"seconds": "0.1"
+					}
+				}
+			],
+			"sid": 821710702875969,
+			"children": [
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "is-moving",
+							"objectClass": "Player",
+							"sid": 814303711360089,
+							"behaviorType": "TileMovement"
+						}
+					],
+					"actions": [
+						{
+							"id": "add-to-eventvar",
+							"objectClass": "System",
+							"sid": 737507712138799,
+							"parameters": {
+								"variable": "MoveCounter",
+								"value": "1"
+							}
+						}
+					],
+					"sid": 504553996350720
+				}
+			]
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "every-tick",
+					"objectClass": "System",
+					"sid": 628046055639427
+				}
+			],
+			"actions": [
+				{
+					"id": "set-text",
+					"objectClass": "Moves",
+					"sid": 665238822518139,
+					"parameters": {
+						"text": "MoveCounter"
+					}
+				}
+			],
+			"sid": 158626633036432
 		}
 	],
 	"sid": 438014735872012

@@ -1,7 +1,7 @@
 {
-	"name": "Sprite6",
+	"name": "Star2",
 	"plugin-id": "Sprite",
-	"sid": 100821584489880,
+	"sid": 111551348000914,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,13 +18,13 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 5878431,
+						"imageSpriteId": 6127582,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 671796541737538,
+				"sid": 215606395707436,
 				"name": "No Star",
 				"isLooping": false,
 				"isPingPong": false,
@@ -42,13 +42,13 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 4823584,
+						"imageSpriteId": 3816417,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 391901835987624,
+				"sid": 488112625356791,
 				"name": "Star",
 				"isLooping": false,
 				"isPingPong": false,

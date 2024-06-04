@@ -1,0 +1,12 @@
+{
+	"name": "LevelCompleteText",
+	"plugin-id": "Text",
+	"sid": 507452666700984,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"NextTXT",
+		"RetryLevel"
+	]
+}

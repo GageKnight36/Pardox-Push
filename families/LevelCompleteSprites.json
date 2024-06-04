@@ -1,0 +1,16 @@
+{
+	"name": "LevelCompleteSprites",
+	"plugin-id": "Sprite",
+	"sid": 392767746842006,
+	"instanceVariables": [],
+	"behaviorTypes": [],
+	"effectTypes": [],
+	"members": [
+		"Sprite2",
+		"Star1",
+		"Star2",
+		"Star3",
+		"NextLevelBTN",
+		"RetryLevelBTN"
+	]
+}
