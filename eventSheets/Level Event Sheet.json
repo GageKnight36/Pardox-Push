@@ -2317,10 +2317,18 @@
 			"actions": [
 				{
 					"id": "set-text",
-					"objectClass": "Moves",
-					"sid": 665238822518139,
+					"objectClass": "MoveCounter",
+					"sid": 786799710243733,
 					"parameters": {
-						"text": "MoveCounter"
+						"text": "\"Total moves: \" & MoveCounter"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "Moves",
+					"sid": 105380392306825,
+					"parameters": {
+						"text": "\"Total moves: \" & MoveCounter"
 					}
 				}
 			],

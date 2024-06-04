@@ -83,7 +83,8 @@
 			"Star2",
 			"Star3",
 			"RetryLevel",
-			"Mouse"
+			"Mouse",
+			"MoveCounter"
 		],
 		"subfolders": []
 	},
