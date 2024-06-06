@@ -1,5 +1,82 @@
 {
 	"name": "Main Menu Event Sheet",
-	"events": [],
+	"events": [
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 702400629184722
+				}
+			],
+			"actions": [
+				{
+					"id": "stop-animation",
+					"objectClass": "Block",
+					"sid": 246742458003581
+				}
+			],
+			"sid": 584553032031392
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-click",
+					"objectClass": "Mouse",
+					"sid": 451070947304796,
+					"parameters": {
+						"mouse-button": "left",
+						"click-type": "clicked"
+					}
+				},
+				{
+					"id": "cursor-is-over-object",
+					"objectClass": "Mouse",
+					"sid": 828321750858615,
+					"parameters": {
+						"object": "Play"
+					}
+				}
+			],
+			"actions": [
+				{
+					"id": "go-to-nextprevious-layout",
+					"objectClass": "System",
+					"sid": 779225963919822,
+					"parameters": {
+						"which": "next"
+					}
+				}
+			],
+			"sid": 318280953304398
+		},
+		{
+			"eventType": "block",
+			"conditions": [
+				{
+					"id": "on-start-of-layout",
+					"objectClass": "System",
+					"sid": 783296818656579
+				}
+			],
+			"actions": [
+				{
+					"id": "play",
+					"objectClass": "Music",
+					"sid": 818692977238261,
+					"parameters": {
+						"audio-file": "cold",
+						"loop": "looping",
+						"volume": "-10",
+						"stereo-pan": "0",
+						"tag-optional": "\"\""
+					}
+				}
+			],
+			"sid": 188340185200870
+		}
+	],
 	"sid": 252680143184062
 }

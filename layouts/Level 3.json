@@ -7,7 +7,7 @@
 			"subLayers": [],
 			"instances": [
 				{
-					"type": "Text",
+					"type": "TestText",
 					"properties": {
 						"text": "Test",
 						"enable-bbcode": true,
@@ -754,7 +754,7 @@
 					}
 				},
 				{
-					"type": "Sprite2",
+					"type": "ScoreBackDrop",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -845,7 +845,7 @@
 					"properties": {
 						"text": "Next level",
 						"enable-bbcode": true,
-						"font": "Arial",
+						"font": "ZTFloogn-ExtraBold",
 						"size": 36,
 						"line-height": 0,
 						"bold": false,
@@ -889,7 +889,7 @@
 					"type": "Star2",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "No Star",
+						"initial-animation": "Start",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -918,7 +918,7 @@
 					"type": "Star3",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "No Star",
+						"initial-animation": "Start",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -948,7 +948,7 @@
 					"properties": {
 						"text": "Retry Level",
 						"enable-bbcode": true,
-						"font": "Arial",
+						"font": "ZTFloogn-ExtraBold",
 						"size": 36,
 						"line-height": 0,
 						"bold": false,
@@ -993,7 +993,7 @@
 					"properties": {
 						"text": "Total moves:",
 						"enable-bbcode": true,
-						"font": "Arial",
+						"font": "ZTFloogn-ExtraBold",
 						"size": 36,
 						"line-height": 0,
 						"bold": false,
@@ -1038,7 +1038,7 @@
 					"properties": {
 						"text": "Total Moves: 0",
 						"enable-bbcode": true,
-						"font": "Arial",
+						"font": "ZTFloogn-ExtraBold",
 						"size": 36,
 						"line-height": 0,
 						"bold": false,
@@ -1082,7 +1082,7 @@
 					"type": "Star1",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "No Star",
+						"initial-animation": "Start",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false

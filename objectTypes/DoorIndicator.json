@@ -1,7 +1,7 @@
 {
-	"name": "Sprite",
+	"name": "DoorIndicator",
 	"plugin-id": "Sprite",
-	"sid": 637689488545885,
+	"sid": 366731809883551,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -11,20 +11,20 @@
 			{
 				"frames": [
 					{
-						"width": 250,
-						"height": 250,
+						"width": 300,
+						"height": 300,
 						"originX": 0.5,
 						"originY": 0.5,
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6881242,
+						"imageSpriteId": 2487017,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 835014027216904,
+				"sid": 230427358425596,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

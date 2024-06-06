@@ -1,7 +1,7 @@
 {
-	"name": "Sprite",
+	"name": "ScoreBackDrop",
 	"plugin-id": "Sprite",
-	"sid": 637689488545885,
+	"sid": 876516950324019,
 	"isGlobal": false,
 	"instanceVariables": [],
 	"behaviorTypes": [],
@@ -18,13 +18,13 @@
 						"originalSource": "",
 						"exportFormat": "lossless",
 						"exportQuality": 0.8,
-						"imageSpriteId": 6881242,
+						"imageSpriteId": 8130203,
 						"useCollisionPoly": true,
 						"duration": 1,
 						"tag": ""
 					}
 				],
-				"sid": 835014027216904,
+				"sid": 562033441254589,
 				"name": "Animation 1",
 				"isLooping": false,
 				"isPingPong": false,

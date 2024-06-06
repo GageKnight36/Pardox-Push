@@ -8,6 +8,13 @@
 	"usedAddons": [
 		{
 			"type": "plugin",
+			"id": "Audio",
+			"name": "Audio",
+			"author": "Scirra",
+			"bundled": false
+		},
+		{
+			"type": "plugin",
 			"id": "Keyboard",
 			"name": "Keyboard",
 			"author": "Scirra",
@@ -56,13 +63,13 @@
 			"Wall",
 			"Block",
 			"Keyboard",
-			"Text",
+			"TestText",
 			"Player2",
 			"Player3",
 			"Flag",
-			"Text2",
+			"LoadingText",
 			"LoadingBackGround",
-			"Sprite3",
+			"ProgressBar",
 			"BlueDoor",
 			"BlueButton",
 			"OrangeButton",
@@ -71,10 +78,10 @@
 			"PurpleButton",
 			"Controls",
 			"BlockName",
-			"Text3",
-			"Sprite4",
-			"Sprite5",
-			"Sprite2",
+			"InfoText",
+			"ButtonIndicator",
+			"DoorIndicator",
+			"ScoreBackDrop",
 			"Star1",
 			"Moves",
 			"RetryLevelBTN",
@@ -85,8 +92,10 @@
 			"RetryLevel",
 			"Mouse",
 			"MoveCounter",
+			"Title",
 			"Sprite",
-			"Sprite6"
+			"Play",
+			"Music"
 		],
 		"subfolders": []
 	},
@@ -128,7 +137,48 @@
 			"subfolders": []
 		},
 		"sound": {
-			"items": [],
+			"items": [
+				{
+					"name": "cold.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 180310720627575,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "StarEarnt.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 342218354651924,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "ReverseTimeSound.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 640109225291688,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "StarNotEarnt.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 351253433717492,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "MovementSound.webm",
+					"type": "audio/webm; codecs=opus",
+					"sid": 262126454847609,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"music": {
@@ -140,7 +190,24 @@
 			"subfolders": []
 		},
 		"font": {
-			"items": [],
+			"items": [
+				{
+					"name": "SHUTTLE-X.ttf",
+					"type": "application/font-sfnt",
+					"sid": 190770159121687,
+					"file-info": {
+						"purpose": "none"
+					}
+				},
+				{
+					"name": "ZTFloogn-ExtraBold.ttf",
+					"type": "application/font-sfnt",
+					"sid": 848077125370874,
+					"file-info": {
+						"purpose": "none"
+					}
+				}
+			],
 			"subfolders": []
 		},
 		"icon": {

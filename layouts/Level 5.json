@@ -36,7 +36,7 @@
 					}
 				},
 				{
-					"type": "Text",
+					"type": "TestText",
 					"properties": {
 						"text": "Test",
 						"enable-bbcode": true,
@@ -199,9 +199,9 @@
 					},
 					"uid": 111,
 					"instanceVariables": {
-						"OneStar": 42,
-						"TwoStars": 37,
-						"ThreeStars": 34
+						"OneStar": 40,
+						"TwoStars": 35,
+						"ThreeStars": 32
 					},
 					"behaviors": {},
 					"world": {
@@ -374,41 +374,12 @@
 						"enable-collisions": true,
 						"live-preview": false
 					},
-					"uid": 119,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 1088,
-						"y": 448,
-						"width": 127,
-						"height": 127,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "BlueButton",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
 					"uid": 125,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
 						"x": 1472,
-						"y": 320,
+						"y": 448,
 						"width": 127,
 						"height": 127,
 						"originX": 0.5,
@@ -466,94 +437,7 @@
 					"behaviors": {},
 					"world": {
 						"x": 1088,
-						"y": 320,
-						"width": 127,
-						"height": 127,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "OrangeButton",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 187,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 1472,
 						"y": 448,
-						"width": 128,
-						"height": 128,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "PurpleButton",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 188,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 1088,
-						"y": 832,
-						"width": 128,
-						"height": 128,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "BlueButton",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Animation 1",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 189,
-					"instanceVariables": {},
-					"behaviors": {},
-					"world": {
-						"x": 1472,
-						"y": 832,
 						"width": 127,
 						"height": 127,
 						"originX": 0.5,
@@ -913,7 +797,7 @@
 					}
 				},
 				{
-					"type": "Sprite2",
+					"type": "ScoreBackDrop",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -1004,7 +888,7 @@
 					"properties": {
 						"text": "Next level",
 						"enable-bbcode": true,
-						"font": "Arial",
+						"font": "ZTFloogn-ExtraBold",
 						"size": 36,
 						"line-height": 0,
 						"bold": false,
@@ -1048,7 +932,7 @@
 					"type": "Star2",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "No Star",
+						"initial-animation": "Start",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -1077,7 +961,7 @@
 					"type": "Star3",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "No Star",
+						"initial-animation": "Start",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -1107,7 +991,7 @@
 					"properties": {
 						"text": "Retry Level",
 						"enable-bbcode": true,
-						"font": "Arial",
+						"font": "ZTFloogn-ExtraBold",
 						"size": 36,
 						"line-height": 0,
 						"bold": false,
@@ -1152,7 +1036,7 @@
 					"properties": {
 						"text": "Total moves:",
 						"enable-bbcode": true,
-						"font": "Arial",
+						"font": "ZTFloogn-ExtraBold",
 						"size": 36,
 						"line-height": 0,
 						"bold": false,
@@ -1197,7 +1081,7 @@
 					"properties": {
 						"text": "Total Moves: 0",
 						"enable-bbcode": true,
-						"font": "Arial",
+						"font": "ZTFloogn-ExtraBold",
 						"size": 36,
 						"line-height": 0,
 						"bold": false,
@@ -1241,7 +1125,7 @@
 					"type": "Star1",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "No Star",
+						"initial-animation": "Start",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false

@@ -6,7 +6,7 @@
 	"behaviorTypes": [],
 	"effectTypes": [],
 	"members": [
-		"Sprite2",
+		"ScoreBackDrop",
 		"Star1",
 		"Star2",
 		"Star3",

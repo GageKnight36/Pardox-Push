@@ -36,7 +36,7 @@
 					}
 				},
 				{
-					"type": "Text",
+					"type": "TestText",
 					"properties": {
 						"text": "Test",
 						"enable-bbcode": true,
@@ -199,9 +199,9 @@
 					},
 					"uid": 81,
 					"instanceVariables": {
-						"OneStar": 32,
-						"TwoStars": 27,
-						"ThreeStars": 23
+						"OneStar": 30,
+						"TwoStars": 26,
+						"ThreeStars": 21
 					},
 					"behaviors": {},
 					"world": {
@@ -387,78 +387,6 @@
 					"world": {
 						"x": 1472,
 						"y": 832,
-						"width": 128,
-						"height": 128,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "OrangeDoor",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Open",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 53,
-					"instanceVariables": {},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 576,
-						"y": 576,
-						"width": 128,
-						"height": 128,
-						"originX": 0.5,
-						"originY": 0.5,
-						"color": [
-							1,
-							1,
-							1,
-							1
-						],
-						"angle": 0,
-						"zElevation": 0
-					}
-				},
-				{
-					"type": "BlueDoor",
-					"properties": {
-						"initially-visible": true,
-						"initial-animation": "Open",
-						"initial-frame": 0,
-						"enable-collisions": true,
-						"live-preview": false
-					},
-					"uid": 50,
-					"instanceVariables": {},
-					"behaviors": {
-						"Solid": {
-							"properties": {
-								"enabled": true,
-								"tags": ""
-							}
-						}
-					},
-					"world": {
-						"x": 448,
-						"y": 576,
 						"width": 128,
 						"height": 128,
 						"originX": 0.5,
@@ -703,7 +631,7 @@
 					}
 				},
 				{
-					"type": "Sprite4",
+					"type": "ButtonIndicator",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -732,7 +660,7 @@
 					}
 				},
 				{
-					"type": "Sprite5",
+					"type": "DoorIndicator",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -761,7 +689,7 @@
 					}
 				},
 				{
-					"type": "Sprite2",
+					"type": "ScoreBackDrop",
 					"properties": {
 						"initially-visible": true,
 						"initial-animation": "Animation 1",
@@ -852,7 +780,7 @@
 					"properties": {
 						"text": "Next level",
 						"enable-bbcode": true,
-						"font": "Arial",
+						"font": "ZTFloogn-ExtraBold",
 						"size": 36,
 						"line-height": 0,
 						"bold": false,
@@ -896,7 +824,7 @@
 					"type": "Star2",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "No Star",
+						"initial-animation": "Start",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -925,7 +853,7 @@
 					"type": "Star3",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "No Star",
+						"initial-animation": "Start",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false
@@ -955,7 +883,7 @@
 					"properties": {
 						"text": "Retry Level",
 						"enable-bbcode": true,
-						"font": "Arial",
+						"font": "ZTFloogn-ExtraBold",
 						"size": 36,
 						"line-height": 0,
 						"bold": false,
@@ -1000,7 +928,7 @@
 					"properties": {
 						"text": "Total moves:",
 						"enable-bbcode": true,
-						"font": "Arial",
+						"font": "ZTFloogn-ExtraBold",
 						"size": 36,
 						"line-height": 0,
 						"bold": false,
@@ -1045,7 +973,7 @@
 					"properties": {
 						"text": "Total Moves: 0",
 						"enable-bbcode": true,
-						"font": "Arial",
+						"font": "ZTFloogn-ExtraBold",
 						"size": 36,
 						"line-height": 0,
 						"bold": false,
@@ -1086,10 +1014,82 @@
 					}
 				},
 				{
+					"type": "OrangeDoor",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Open",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 53,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 576,
+						"y": 576,
+						"width": 128,
+						"height": 128,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "BlueDoor",
+					"properties": {
+						"initially-visible": true,
+						"initial-animation": "Open",
+						"initial-frame": 0,
+						"enable-collisions": true,
+						"live-preview": false
+					},
+					"uid": 50,
+					"instanceVariables": {},
+					"behaviors": {
+						"Solid": {
+							"properties": {
+								"enabled": true,
+								"tags": ""
+							}
+						}
+					},
+					"world": {
+						"x": 448,
+						"y": 576,
+						"width": 128,
+						"height": 128,
+						"originX": 0.5,
+						"originY": 0.5,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
 					"type": "Star1",
 					"properties": {
 						"initially-visible": true,
-						"initial-animation": "No Star",
+						"initial-animation": "Start",
 						"initial-frame": 0,
 						"enable-collisions": true,
 						"live-preview": false

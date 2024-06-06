@@ -25,7 +25,7 @@
 					}
 				],
 				"sid": 671796541737538,
-				"name": "No Star",
+				"name": "Start",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,
@@ -50,6 +50,30 @@
 				],
 				"sid": 391901835987624,
 				"name": "Star",
+				"isLooping": false,
+				"isPingPong": false,
+				"repeatCount": 1,
+				"repeatTo": 0,
+				"speed": 5
+			},
+			{
+				"frames": [
+					{
+						"width": 250,
+						"height": 250,
+						"originX": 0.5,
+						"originY": 0.5,
+						"originalSource": "",
+						"exportFormat": "lossless",
+						"exportQuality": 0.8,
+						"imageSpriteId": 4890024,
+						"useCollisionPoly": true,
+						"duration": 1,
+						"tag": ""
+					}
+				],
+				"sid": 723205031423747,
+				"name": "No Star",
 				"isLooping": false,
 				"isPingPong": false,
 				"repeatCount": 1,

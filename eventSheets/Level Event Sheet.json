@@ -227,6 +227,10 @@
 			]
 		},
 		{
+			"eventType": "comment",
+			"text": "Reverse Blockmovement"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -268,6 +272,10 @@
 			"sid": 831099589346395,
 			"children": [
 				{
+					"eventType": "comment",
+					"text": "Checks if the player's last move was up"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -302,7 +310,7 @@
 						},
 						{
 							"id": "set-text",
-							"objectClass": "Text",
+							"objectClass": "TestText",
 							"sid": 550423651317432,
 							"parameters": {
 								"text": "Blocks.HistoryFamily"
@@ -315,6 +323,18 @@
 							"parameters": {
 								"variable": "MoveCounter",
 								"value": "1"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Music",
+							"sid": 818332936258477,
+							"parameters": {
+								"audio-file": "ReverseTimeSound",
+								"loop": "not-looping",
+								"volume": "-10",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
 							}
 						}
 					],
@@ -360,6 +380,10 @@
 					]
 				},
 				{
+					"eventType": "comment",
+					"text": "Checks if the player's last move was right"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -403,7 +427,7 @@
 						},
 						{
 							"id": "set-text",
-							"objectClass": "Text",
+							"objectClass": "TestText",
 							"sid": 975058575529894,
 							"parameters": {
 								"text": "Blocks.HistoryFamily"
@@ -416,6 +440,18 @@
 							"parameters": {
 								"variable": "MoveCounter",
 								"value": "1"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Music",
+							"sid": 449656077505987,
+							"parameters": {
+								"audio-file": "ReverseTimeSound",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
 							}
 						}
 					],
@@ -461,6 +497,10 @@
 					]
 				},
 				{
+					"eventType": "comment",
+					"text": "Checks if the player's last move was down"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -504,7 +544,7 @@
 						},
 						{
 							"id": "set-text",
-							"objectClass": "Text",
+							"objectClass": "TestText",
 							"sid": 820595917746018,
 							"parameters": {
 								"text": "Blocks.HistoryFamily"
@@ -517,6 +557,18 @@
 							"parameters": {
 								"variable": "MoveCounter",
 								"value": "1"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Music",
+							"sid": 327417272496524,
+							"parameters": {
+								"audio-file": "ReverseTimeSound",
+								"loop": "not-looping",
+								"volume": "-10",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
 							}
 						}
 					],
@@ -562,6 +614,10 @@
 					]
 				},
 				{
+					"eventType": "comment",
+					"text": "Checks if the player's last move was left"
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -605,7 +661,7 @@
 						},
 						{
 							"id": "set-text",
-							"objectClass": "Text",
+							"objectClass": "TestText",
 							"sid": 573056021468301,
 							"parameters": {
 								"text": "Blocks.HistoryFamily"
@@ -618,6 +674,18 @@
 							"parameters": {
 								"variable": "MoveCounter",
 								"value": "1"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Music",
+							"sid": 790536426279372,
+							"parameters": {
+								"audio-file": "ReverseTimeSound",
+								"loop": "not-looping",
+								"volume": "-10",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
 							}
 						}
 					],
@@ -666,7 +734,7 @@
 		},
 		{
 			"eventType": "comment",
-			"text": "for checking for multiple blocks use a while loop and check at iterations of 128 pixels go into you found wall or blank."
+			"text": "Function for checking if the player can move"
 		},
 		{
 			"functionName": "canMove",
@@ -745,6 +813,10 @@
 					"actions": [],
 					"sid": 527610303560486,
 					"children": [
+						{
+							"eventType": "comment",
+							"text": "Checks if there isn't anything at the current x and y offset"
+						},
 						{
 							"eventType": "block",
 							"conditions": [
@@ -847,18 +919,6 @@
 												"offset-y": "yOffSet"
 											},
 											"isInverted": true
-										},
-										{
-											"id": "is-overlapping-at-offset",
-											"objectClass": "Player",
-											"sid": 209941897833220,
-											"disabled": true,
-											"parameters": {
-												"object": "Doors",
-												"offset-x": "xOffSet",
-												"offset-y": "yOffSet"
-											},
-											"isInverted": true
 										}
 									],
 									"actions": [
@@ -882,6 +942,10 @@
 										}
 									],
 									"sid": 958809430077401
+								},
+								{
+									"eventType": "comment",
+									"text": "This will only see the door as a solid object if it is closed"
 								},
 								{
 									"eventType": "block",
@@ -936,6 +1000,10 @@
 											"sid": 467066875956506
 										}
 									]
+								},
+								{
+									"eventType": "comment",
+									"text": "Checks if the player's offset is overlapping a block, if so it will increase the offset to check the next object in the grid"
 								},
 								{
 									"eventType": "block",
@@ -1077,6 +1145,10 @@
 							]
 						},
 						{
+							"eventType": "comment",
+							"text": "If at any point in the last loop it turns out the player can't move it will cancel their movement here"
+						},
+						{
 							"eventType": "block",
 							"conditions": [
 								{
@@ -1097,15 +1169,6 @@
 									"parameters": {
 										"variable": "CountLoop",
 										"value": "0"
-									}
-								},
-								{
-									"id": "add-to-eventvar",
-									"objectClass": "System",
-									"sid": 519834175478861,
-									"parameters": {
-										"variable": "MoveCounter",
-										"value": "-1"
 									}
 								}
 							],
@@ -1256,6 +1319,10 @@
 			]
 		},
 		{
+			"eventType": "comment",
+			"text": "Stops the animation of objects and resets some global variables"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -1305,6 +1372,10 @@
 				}
 			],
 			"sid": 238345555034538
+		},
+		{
+			"eventType": "comment",
+			"text": "Function for getting the correct unique ID for the block/s the player is trying to push"
 		},
 		{
 			"functionName": "checkNextBlock",
@@ -1374,7 +1445,7 @@
 						},
 						{
 							"id": "set-text",
-							"objectClass": "Text",
+							"objectClass": "TestText",
 							"sid": 992706320628875,
 							"parameters": {
 								"text": "Blocks.HistoryFamily"
@@ -1511,6 +1582,10 @@
 			]
 		},
 		{
+			"eventType": "comment",
+			"text": "Detects when the player gets to the end of the level"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -1564,6 +1639,10 @@
 					"sid": 287643869228156
 				},
 				{
+					"type": "comment",
+					"text": "Has to wait for the player to finish moving before you can disable tile movement or it stops them mid move"
+				},
+				{
 					"id": "wait",
 					"objectClass": "System",
 					"sid": 671096499121549,
@@ -1582,6 +1661,10 @@
 				}
 			],
 			"sid": 560355599966486
+		},
+		{
+			"eventType": "comment",
+			"text": "Detects when there is a block on the blue button to open all blue doors"
 		},
 		{
 			"eventType": "block",
@@ -1665,6 +1748,10 @@
 			"sid": 985608402755342
 		},
 		{
+			"eventType": "comment",
+			"text": "Detects when there is a block on the orange button to open all orange doors"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -1744,6 +1831,10 @@
 				}
 			],
 			"sid": 572407474023569
+		},
+		{
+			"eventType": "comment",
+			"text": "Detects when there is a block on the purple button to open all purple doors"
 		},
 		{
 			"eventType": "block",
@@ -1827,6 +1918,10 @@
 			"sid": 378824803722263
 		},
 		{
+			"eventType": "comment",
+			"text": "If the player gets stuck they can press X to restart the level"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{
@@ -1836,6 +1931,15 @@
 					"parameters": {
 						"key": 88
 					}
+				},
+				{
+					"id": "compare-boolean-eventvar",
+					"objectClass": "System",
+					"sid": 201710334857927,
+					"parameters": {
+						"variable": "LevelComplete"
+					},
+					"isInverted": true
 				}
 			],
 			"actions": [
@@ -1864,6 +1968,10 @@
 				}
 			],
 			"sid": 128306982442712
+		},
+		{
+			"eventType": "comment",
+			"text": "This is the function that gets called once the player reaches the flag, I put it in a function so I could have a delay after it gets called"
 		},
 		{
 			"functionName": "LevelComplete",
@@ -1897,6 +2005,10 @@
 			"sid": 519124585587667,
 			"children": [
 				{
+					"eventType": "comment",
+					"text": "The end level flags have their own instance variables for each level of moves needed to achieve each star, then they are compared to the moves the player has taken."
+				},
+				{
 					"eventType": "block",
 					"conditions": [
 						{
@@ -1912,12 +2024,36 @@
 					],
 					"actions": [
 						{
+							"type": "comment",
+							"text": "There is a second delay between each star for effect"
+						},
+						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 126320915298575,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
 							"id": "set-animation",
 							"objectClass": "Star1",
 							"sid": 637019278627630,
 							"parameters": {
 								"animation": "\"Star\"",
 								"from": "current-frame"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Music",
+							"sid": 877802300414477,
+							"parameters": {
+								"audio-file": "StarEarnt",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
 							}
 						}
 					],
@@ -1934,12 +2070,32 @@
 					],
 					"actions": [
 						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 552309382644668,
+							"parameters": {
+								"seconds": "1.0"
+							}
+						},
+						{
 							"id": "set-animation",
 							"objectClass": "Star1",
 							"sid": 397226413225258,
 							"parameters": {
 								"animation": "\"No Star\"",
 								"from": "current-frame"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Music",
+							"sid": 448481904607816,
+							"parameters": {
+								"audio-file": "StarNotEarnt",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
 							}
 						}
 					],
@@ -1961,12 +2117,32 @@
 					],
 					"actions": [
 						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 327972048168973,
+							"parameters": {
+								"seconds": "2.0"
+							}
+						},
+						{
 							"id": "set-animation",
 							"objectClass": "Star2",
 							"sid": 373954932751367,
 							"parameters": {
 								"animation": "\"Star\"",
 								"from": "current-frame"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Music",
+							"sid": 552790949177062,
+							"parameters": {
+								"audio-file": "StarEarnt",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
 							}
 						}
 					],
@@ -1983,12 +2159,32 @@
 					],
 					"actions": [
 						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 830906669852907,
+							"parameters": {
+								"seconds": "2.0"
+							}
+						},
+						{
 							"id": "set-animation",
 							"objectClass": "Star2",
 							"sid": 327824937772030,
 							"parameters": {
 								"animation": "\"No Star\"",
 								"from": "current-frame"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Music",
+							"sid": 305411309027479,
+							"parameters": {
+								"audio-file": "StarNotEarnt",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
 							}
 						}
 					],
@@ -2010,12 +2206,32 @@
 					],
 					"actions": [
 						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 131188164865588,
+							"parameters": {
+								"seconds": "3.0"
+							}
+						},
+						{
 							"id": "set-animation",
 							"objectClass": "Star3",
 							"sid": 107333655239030,
 							"parameters": {
 								"animation": "\"Star\"",
 								"from": "current-frame"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Music",
+							"sid": 379941373974891,
+							"parameters": {
+								"audio-file": "StarEarnt",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
 							}
 						}
 					],
@@ -2032,6 +2248,14 @@
 					],
 					"actions": [
 						{
+							"id": "wait",
+							"objectClass": "System",
+							"sid": 810365199633144,
+							"parameters": {
+								"seconds": "3.0"
+							}
+						},
+						{
 							"id": "set-animation",
 							"objectClass": "Star3",
 							"sid": 572874912422522,
@@ -2039,11 +2263,31 @@
 								"animation": "\"No Star\"",
 								"from": "current-frame"
 							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Music",
+							"sid": 802865554953293,
+							"parameters": {
+								"audio-file": "StarNotEarnt",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
 						}
 					],
 					"sid": 645511586496828
 				}
 			]
+		},
+		{
+			"eventType": "comment",
+			"text": "I had to manually detect when the player would move and disable default controls, to prevent the player from being able to hold down to move or spam move as this wouldn't effect the move counter correctly."
+		},
+		{
+			"eventType": "comment",
+			"text": "To prevent the player from increasing the move counter whilst they were moving I had to add a check to see if the player is currently moving, also it only triggers on release so you can't hold down"
 		},
 		{
 			"eventType": "block",
@@ -2103,6 +2347,18 @@
 							"parameters": {
 								"variable": "MoveCounter",
 								"value": "1"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Music",
+							"sid": 472960332944930,
+							"parameters": {
+								"audio-file": "MovementSound",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
 							}
 						}
 					],
@@ -2169,6 +2425,18 @@
 								"variable": "MoveCounter",
 								"value": "1"
 							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Music",
+							"sid": 914435140555555,
+							"parameters": {
+								"audio-file": "MovementSound",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
 						}
 					],
 					"sid": 807520117428905
@@ -2233,6 +2501,18 @@
 							"parameters": {
 								"variable": "MoveCounter",
 								"value": "1"
+							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Music",
+							"sid": 367038948887432,
+							"parameters": {
+								"audio-file": "MovementSound",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
 							}
 						}
 					],
@@ -2299,11 +2579,27 @@
 								"variable": "MoveCounter",
 								"value": "1"
 							}
+						},
+						{
+							"id": "play",
+							"objectClass": "Music",
+							"sid": 274722058484086,
+							"parameters": {
+								"audio-file": "MovementSound",
+								"loop": "not-looping",
+								"volume": "0",
+								"stereo-pan": "0",
+								"tag-optional": "\"\""
+							}
 						}
 					],
 					"sid": 504553996350720
 				}
 			]
+		},
+		{
+			"eventType": "comment",
+			"text": "Updates the players movement counter"
 		},
 		{
 			"eventType": "block",
@@ -2333,6 +2629,10 @@
 				}
 			],
 			"sid": 158626633036432
+		},
+		{
+			"eventType": "comment",
+			"text": "These are here to detect the player clicking a button"
 		},
 		{
 			"eventType": "block",

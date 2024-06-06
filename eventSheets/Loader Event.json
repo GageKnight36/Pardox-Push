@@ -13,7 +13,7 @@
 			"actions": [
 				{
 					"id": "set-width",
-					"objectClass": "Sprite3",
+					"objectClass": "ProgressBar",
 					"sid": 568036087538171,
 					"parameters": {
 						"width": "round(loadingprogress)*400"
@@ -41,11 +41,11 @@
 					}
 				},
 				{
-					"id": "go-to-layout",
+					"id": "go-to-nextprevious-layout",
 					"objectClass": "System",
-					"sid": 615506404950910,
+					"sid": 603543390374088,
 					"parameters": {
-						"layout": "Level 1"
+						"which": "next"
 					}
 				}
 			],
