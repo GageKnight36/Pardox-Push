@@ -53,6 +53,10 @@
 			"sid": 318280953304398
 		},
 		{
+			"eventType": "comment",
+			"text": "Starts the background music"
+		},
+		{
 			"eventType": "block",
 			"conditions": [
 				{

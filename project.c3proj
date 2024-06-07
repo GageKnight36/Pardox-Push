@@ -95,7 +95,10 @@
 			"Title",
 			"Sprite",
 			"Play",
-			"Music"
+			"Music",
+			"ScoreText",
+			"ScoreText2",
+			"ScoreText3"
 		],
 		"subfolders": []
 	},

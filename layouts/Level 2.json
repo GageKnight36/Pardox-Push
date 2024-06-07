@@ -668,6 +668,86 @@
 					}
 				},
 				{
+					"type": "MoveCounter",
+					"properties": {
+						"text": "Total Moves: 0",
+						"enable-bbcode": true,
+						"font": "ZTFloogn-ExtraBold",
+						"size": 36,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"horizontal-alignment": "left",
+						"vertical-alignment": "top",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 181,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 0,
+						"y": 0,
+						"width": 384,
+						"height": 192,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				}
+			],
+			"sid": 843807760131424,
+			"effectTypes": [],
+			"isInitiallyVisible": true,
+			"isInitiallyInteractive": true,
+			"isHTMLElementsLayer": false,
+			"color": [
+				1,
+				1,
+				1,
+				1
+			],
+			"backgroundColor": [
+				0.8117647058823529,
+				0.8117647058823529,
+				0.8117647058823529,
+				1
+			],
+			"isTransparent": false,
+			"parallaxX": 1,
+			"parallaxY": 1,
+			"scaleRate": 1,
+			"forceOwnTexture": false,
+			"renderingMode": "3d",
+			"drawOrder": "z-order",
+			"useRenderCells": false,
+			"blendMode": "normal",
+			"zElevation": 0,
+			"global": false
+		},
+		{
+			"name": "Top",
+			"overriden": 0,
+			"subLayers": [],
+			"instances": [
+				{
 					"type": "ScoreBackDrop",
 					"properties": {
 						"initially-visible": true,
@@ -948,9 +1028,9 @@
 					}
 				},
 				{
-					"type": "MoveCounter",
+					"type": "ScoreText2",
 					"properties": {
-						"text": "Total Moves: 0",
+						"text": "Move amount 2",
 						"enable-bbcode": true,
 						"font": "ZTFloogn-ExtraBold",
 						"size": 36,
@@ -958,13 +1038,13 @@
 						"bold": false,
 						"italic": false,
 						"color": [
-							1,
-							1,
-							1,
+							0,
+							0,
+							0,
 							1
 						],
-						"horizontal-alignment": "left",
-						"vertical-alignment": "top",
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
 						"wrapping": "word",
 						"text-direction": "ltr",
 						"icon-set": -1,
@@ -972,14 +1052,59 @@
 						"origin": "top-left",
 						"read-aloud": false
 					},
-					"uid": 181,
+					"uid": 198,
 					"instanceVariables": {},
 					"behaviors": {},
 					"world": {
-						"x": 0,
-						"y": 0,
-						"width": 384,
-						"height": 192,
+						"x": 2752,
+						"y": 256,
+						"width": 256,
+						"height": 256,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ScoreText3",
+					"properties": {
+						"text": "Move amount 3",
+						"enable-bbcode": true,
+						"font": "ZTFloogn-ExtraBold",
+						"size": 36,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 199,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 3136,
+						"y": 256,
+						"width": 256,
+						"height": 256,
 						"originX": 0,
 						"originY": 0,
 						"color": [
@@ -1018,11 +1143,56 @@
 							1
 						],
 						"angle": 0,
-						"zElevation": 1
+						"zElevation": 0
+					}
+				},
+				{
+					"type": "ScoreText",
+					"properties": {
+						"text": "Move amount 1",
+						"enable-bbcode": true,
+						"font": "ZTFloogn-ExtraBold",
+						"size": 36,
+						"line-height": 0,
+						"bold": false,
+						"italic": false,
+						"color": [
+							0,
+							0,
+							0,
+							1
+						],
+						"horizontal-alignment": "center",
+						"vertical-alignment": "center",
+						"wrapping": "word",
+						"text-direction": "ltr",
+						"icon-set": -1,
+						"initially-visible": true,
+						"origin": "top-left",
+						"read-aloud": false
+					},
+					"uid": 197,
+					"instanceVariables": {},
+					"behaviors": {},
+					"world": {
+						"x": 2368,
+						"y": 256,
+						"width": 256,
+						"height": 256,
+						"originX": 0,
+						"originY": 0,
+						"color": [
+							1,
+							1,
+							1,
+							1
+						],
+						"angle": 0,
+						"zElevation": 0.0001
 					}
 				}
 			],
-			"sid": 843807760131424,
+			"sid": 959117237418168,
 			"effectTypes": [],
 			"isInitiallyVisible": true,
 			"isInitiallyInteractive": true,
@@ -1034,12 +1204,12 @@
 				1
 			],
 			"backgroundColor": [
-				0.8117647058823529,
-				0.8117647058823529,
-				0.8117647058823529,
+				1,
+				1,
+				1,
 				1
 			],
-			"isTransparent": false,
+			"isTransparent": true,
 			"parallaxX": 1,
 			"parallaxY": 1,
 			"scaleRate": 1,

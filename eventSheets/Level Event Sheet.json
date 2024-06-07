@@ -1369,6 +1369,30 @@
 						"variable": "MoveCounter",
 						"value": "0"
 					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "ScoreText",
+					"sid": 545490772004110,
+					"parameters": {
+						"text": "Flag.OneStar"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "ScoreText2",
+					"sid": 976802818520485,
+					"parameters": {
+						"text": "Flag.TwoStars"
+					}
+				},
+				{
+					"id": "set-text",
+					"objectClass": "ScoreText3",
+					"sid": 530583936551028,
+					"parameters": {
+						"text": "Flag.ThreeStars"
+					}
 				}
 			],
 			"sid": 238345555034538
@@ -2655,17 +2679,65 @@
 					}
 				}
 			],
-			"actions": [
+			"actions": [],
+			"sid": 647135639755545,
+			"children": [
 				{
-					"id": "go-to-nextprevious-layout",
-					"objectClass": "System",
-					"sid": 810750003677468,
-					"parameters": {
-						"which": "next"
-					}
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "compare-instance-variable",
+							"objectClass": "Flag",
+							"sid": 851848793334593,
+							"parameters": {
+								"instance-variable": "OneStar",
+								"comparison": 0,
+								"value": "48"
+							}
+						}
+					],
+					"actions": [
+						{
+							"id": "set-text",
+							"objectClass": "NextTXT",
+							"sid": 692464394623880,
+							"parameters": {
+								"text": "\"Return to main menu\""
+							}
+						},
+						{
+							"id": "go-to-layout-by-name",
+							"objectClass": "System",
+							"sid": 331322294432752,
+							"parameters": {
+								"layout": "\"Main Menu\""
+							}
+						}
+					],
+					"sid": 546172452332405
+				},
+				{
+					"eventType": "block",
+					"conditions": [
+						{
+							"id": "else",
+							"objectClass": "System",
+							"sid": 159117067810368
+						}
+					],
+					"actions": [
+						{
+							"id": "go-to-nextprevious-layout",
+							"objectClass": "System",
+							"sid": 162660826420893,
+							"parameters": {
+								"which": "next"
+							}
+						}
+					],
+					"sid": 493908162375606
 				}
-			],
-			"sid": 647135639755545
+			]
 		},
 		{
 			"eventType": "block",
